@@ -3,8 +3,8 @@ export default function MainProject() {
     <div className="bg-white">
       <div className="mx-auto max-w-[430px] bg-white">
         <div className="h-full w-full pt-6">
-          <section className="mb-2 px-5">
-            <h2 className="mb-4 text-[24px] font-bold">SIDE PROJECT.</h2>
+          <section className="px-5">
+            <h2 className="mb-3 text-[24px] font-bold">SIDE PROJECT.</h2>
           </section>
           <div className="flex overflow-x-auto bg-white pl-5">
             <div className="grid h-[360px] min-w-[590px] grid-cols-3 gap-3">

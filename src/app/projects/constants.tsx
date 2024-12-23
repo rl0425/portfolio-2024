@@ -1,7 +1,7 @@
 import { Projects } from "./types";
 
 export const projects: Projects = {
-  LIVE_SERVICE: {
+  live_service: {
     title: "LIVE SERVICE",
     date: "23.08 ~ 24.09",
     mainDescription: (
@@ -17,7 +17,12 @@ export const projects: Projects = {
         공유 및 화상 소통 서비스 개발
       </p>
     ),
-    image: ["/images/gantt/move.gif", "/images/gantt/view.gif"],
+    image: [
+      "/images/live/live_1.png",
+      "/images/live/live_2.png",
+      "/images/live/live_4.png",
+      "/images/live/live_5.png",
+    ],
     description: [
       {
         title: "Agora Video Calling SDK",
@@ -96,15 +101,19 @@ export const projects: Projects = {
       "Figma",
     ],
     link: {
-      detail: (
+      title: "Related",
+      related: [
         <a
+          key="0"
           href="https://docs.agora.io/en/video-calling/get-started/get-started-sdk"
           className="underline"
         >
-          Agora Video SDK
-        </a>
-      ),
-      related: "",
+          Agora Video SDK,
+        </a>,
+        <a key="1" href="https://www.classu.co.kr/new" className="underline">
+          ClassU
+        </a>,
+      ],
     },
   },
 };
