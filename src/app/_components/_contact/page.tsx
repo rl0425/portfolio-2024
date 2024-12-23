@@ -5,12 +5,12 @@ export default function Contact() {
         <main className="h-full w-full pt-12">
           <section className="mb-6">
             <h2 className="mb-4 text-[24px] font-bold">CONTACT.</h2>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               <div className="flex flex-col text-[14px] leading-relaxed">
                 <p className="text-[16px] font-650">EMAIL.</p>
                 <a
                   href="mailto:qkrrlcks45@daum.net"
-                  className="font-450 underline"
+                  className="font-light underline"
                 >
                   qkrrlcks45@daum.net
                 </a>

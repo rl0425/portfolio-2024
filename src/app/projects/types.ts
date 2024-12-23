@@ -13,8 +13,8 @@ export interface Project {
   description: ProjectDescription[];
   techStack: string[];
   link: {
-    detail: React.ReactNode;
-    related: string;
+    title: string;
+    related: React.ReactNode[];
   };
 }
 
