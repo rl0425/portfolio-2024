@@ -5,6 +5,11 @@ export interface ProjectDescription {
   description: React.ReactNode[];
 }
 
+export interface Feature {
+  title: string;
+  items: React.ReactNode[];
+}
+
 export interface Project {
   title: string;
   date: string;
@@ -12,6 +17,7 @@ export interface Project {
   mainDescription: React.ReactNode;
   description: ProjectDescription[];
   techStack: string[];
+  feature: Feature[];
   link: {
     title: string;
     related: React.ReactNode[];
