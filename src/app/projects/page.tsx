@@ -103,18 +103,44 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
             </div>
           </div>
         ))}
-        <div className="mt-6 px-5">
+        <div className="mt-8 px-5">
           <h3 className="text-[14px] font-bold text-[#222222]">Tech Stack</h3>
           <div className="mt-1 flex flex-wrap gap-1">
             {project.techStack.map((tech, index) => (
               <span
                 key={index}
-                className="rounded-[4px] border border-solid border-[#2222224f] bg-[#ffffff] px-[8px] py-1 text-[14px] font-bold text-[#222222]"
+                className="rounded-[4px] border border-solid border-[#2222224f] bg-[#434040] px-[8px] py-1 text-[12px] font-semibold text-[#ffffff]"
               >
                 {tech}
               </span>
             ))}
           </div>
+        </div>
+
+        <div className="mt-10 px-5">
+          <h3 className="mb-4 text-[14px] font-bold text-[#222222]">
+            Features And Page{" "}
+          </h3>
+          {project.feature.map((feature, index) => (
+            <div key={index} className="mb-2 mt-1 flex flex-col">
+              <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229]">
+                {feature.title}
+              </h4>
+              <div className="ml-3 mt-1">
+                {feature.items.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="align-center flex items-start gap-2"
+                  >
+                    <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
+                    <p className="text-[12px] font-normal leading-[25px]">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="mt-6 px-5">
@@ -123,7 +149,9 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
           </h3>
           <div className="mt-1 flex flex-wrap gap-1">
             {project.link.related.map((item, index) => (
-              <span key={index}>{item}</span>
+              <span className="text-[12px]" key={index}>
+                {item}
+              </span>
             ))}
           </div>
         </div>
