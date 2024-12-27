@@ -14,7 +14,7 @@ const STYLES = {
   MAIN: "h-full w-full pt-10",
   SECTION: "mb-4",
   HEADING: "mb-2 text-[24px] font-bold",
-  CONTENT: "flex flex-col gap-1 text-[12px] font-normal leading-relaxed",
+  CONTENT: "flex flex-col gap-1 text-[12px] font-semibold",
   BUTTON:
     "(mt-4 text-[12px] font-medium) (text-blue-500 hover:text-blue-600) (transition-colors duration-200)",
 } as const;
@@ -110,7 +110,7 @@ export default function Introduce() {
             <div className={STYLES.CONTENT}>
               {visibleSections.map((section) => (
                 <div
-                  className="text-[12px] font-normal leading-[2.0] leading-relaxed text-[#222222ba]"
+                  className="text-[12px] font-normal leading-[1.9] text-[#222222ba]"
                   key={section.id}
                 >
                   {section.content}
