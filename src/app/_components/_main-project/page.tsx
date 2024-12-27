@@ -14,33 +14,33 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     id: 1,
-    imageUrl: "/images/live/live_1.png",
+    imageUrl: "/images/live/live_2.png",
     title: "LIVE PROJECT",
     url: "live_service",
   },
   {
     id: 2,
-    imageUrl: "/images/live/live_2.png",
-    title: "Project 1",
-    url: "live_service",
+    imageUrl: "/images/gantt/gantt9.png",
+    title: "Gantt Chart",
+    url: "gantt_chart",
   },
   {
     id: 3,
-    imageUrl: "/images/live/live_3.png",
-    title: "Project 1",
-    url: "live_service",
-  },
-  {
-    id: 4,
     imageUrl: "/images/live/live_4.png",
     title: "Project 1",
     url: "live_service",
   },
   {
+    id: 4,
+    imageUrl: "/images/enterprise/image.png",
+    title: "Enterprise Model",
+    url: "enterprise_model",
+  },
+  {
     id: 5,
-    imageUrl: "/images/live/live_5.png",
-    title: "Project 1",
-    url: "live_service",
+    imageUrl: "/images/evaluation/image.png",
+    title: "Project Evaluation",
+    url: "project_evaluation",
   },
   {
     id: 6,
