@@ -104,7 +104,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
           </div>
         ))}
         <div className="mt-8 px-5">
-          <h3 className="text-[14px] font-bold text-[#222222]">Tech Stack</h3>
+          <h3 className="text-[16px] font-bold text-[#222222]">Tech Stack</h3>
           <div className="mt-1 flex flex-wrap gap-1">
             {project.techStack.map((tech, index) => (
               <span
@@ -118,7 +118,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
         </div>
 
         <div className="mt-10 px-5">
-          <h3 className="mb-4 text-[14px] font-bold text-[#222222]">
+          <h3 className="mb-4 text-[16px] font-bold text-[#222222]">
             Features And Page{" "}
           </h3>
           {project.feature.map((feature, index) => (

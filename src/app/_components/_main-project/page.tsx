@@ -27,8 +27,8 @@ const PROJECTS: ProjectItem[] = [
   {
     id: 3,
     imageUrl: "/images/live/live_4.png",
-    title: "Project 1",
-    url: "live_service",
+    title: "Project Summary",
+    url: "project_summary",
   },
   {
     id: 4,
