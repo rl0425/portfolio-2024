@@ -26,13 +26,13 @@ const PROJECTS: ProjectItem[] = [
   },
   {
     id: 3,
-    imageUrl: "/images/live/live_4.png",
+    imageUrl: "/images/summary/summary_4.png",
     title: "Project Summary",
     url: "project_summary",
   },
   {
     id: 4,
-    imageUrl: "/images/enterprise/image.png",
+    imageUrl: "/images/enterprise/enterprise_1.png",
     title: "Enterprise Model",
     url: "enterprise_model",
   },
@@ -54,7 +54,7 @@ const IMAGE_CONTAINER_STYLE =
   "relative flex items-center justify-center rounded-[4px] overflow-hidden transition-transform duration-300 hover:scale-95";
 
 const OVERLAY_STYLE =
-  "absolute inset-0 bg-[] flex items-center justify-center transition-opacity duration-300";
+  "absolute inset-0 bg-[#0000009e] flex items-center justify-center transition-opacity duration-300";
 
 export default function MainProject() {
   const router = useRouter();
@@ -86,7 +86,9 @@ export default function MainProject() {
           />
           {/* 오버레이 레이어와 텍스트 */}
           <div className={OVERLAY_STYLE}>
-            <p className="text-center text-xl font-bold text-[#ffffffa3]"></p>
+            <p className="text-center text-xl font-bold text-[#ffffffa3]">
+              {project.title}
+            </p>
           </div>
         </div>
       </div>
