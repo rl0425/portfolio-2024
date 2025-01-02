@@ -195,6 +195,7 @@ export const projects: Projects = {
         ],
       },
     ],
+    team: ["프론트엔드 2명,", "백엔드 2명,", "디자이너 2명,", "마케터 1명"],
     link: {
       title: "Related",
       related: [
@@ -375,6 +376,7 @@ export const projects: Projects = {
         ],
       },
     ],
+    team: ["프론트엔드 1명,", "디자이너 1명,", "마케터 1명"],
     link: {
       title: "Related",
       related: [
@@ -533,6 +535,7 @@ export const projects: Projects = {
         ],
       },
     ],
+    team: ["프론트엔드 3명,", "디자이너 3명,", "마케터 2명"],
     link: {
       title: "Related",
       related: [
@@ -705,6 +708,7 @@ export const projects: Projects = {
         ],
       },
     ],
+    team: ["프론트엔드 1명,", "디자이너 1명,", "마케터 1명"],
     link: {
       title: "Related",
       related: [
@@ -853,6 +857,155 @@ export const projects: Projects = {
         ],
       },
     ],
+    team: ["프론트엔드 1명,", "디자이너 1명,", "마케터 1명"],
+    link: {
+      title: "Related",
+      related: [
+        <a key="0" href="https://work.clovine.com" className="underline">
+          Clovine
+        </a>,
+      ],
+    },
+  },
+  deats: {
+    title: "Deats",
+    date: "22.04 ~ 22.06",
+    mainDescription: (
+      <p>
+        결식 아동들을 위한 급식/부식을 무상으로 제공해주는 복지서비스인
+        &quot;아동급식드림카드&quot;를 사용할 수 있는 가게에 대한 정보와 리뷰를
+        제공하고, 사용자가 쉽게 가게를 찾아갈 수 있는 MAP 서비스를 연동하여
+        기존의 복지카드를 쉽게 사용할 수 있는 웹 기획 및 개발
+      </p>
+    ),
+    image: [
+      "/images/summary/summary_2.gif",
+      "/images/summary/summary_1.png",
+      "/images/summary/summary_3.png",
+      "/images/summary/summary_4.png",
+    ],
+    description: [
+      {
+        title: "디자인과 배포를 제외한 전반적인 기획 및 개발, 구현 작업 수행",
+        description: [
+          <p key="0">
+            프로젝트의 핵심 기능을 직접 설계하고 구현하며 전체적인 개발 프로세스
+            주도
+          </p>,
+        ],
+      },
+      {
+        title: "프로젝트 초기 설정 시스템 구축",
+        description: [
+          <p key="0">
+            <span className="underline">
+              프로젝트의 기본 규칙, 목표 설정, 핵심 성과 지표(KPI) 설정 등
+              다양한 형태의 입력 폼을 체계적으로 구현
+            </span>
+            하여 프로젝트 매니저들이 효율적으로 프로젝트를 설정할 수 있도록 지원
+          </p>,
+        ],
+      },
+      {
+        title: "활동 로그 시스템 개발",
+        description: [
+          <p key="0">
+            프로젝트 내에서 발생하는 모든 사용자 활동을 실시간으로 추적하고
+            기록하는{" "}
+            <span className="underline">
+              포괄적인 로깅 시스템을 구축하여 프로젝트의 투명성과 추적성을 확보
+            </span>
+          </p>,
+          "수집된 로그 데이터를 효율적으로 정규화하고 필터링하는 로직을 개발하여 의미 있는 정보만을 선별적으로 제공할 수 있도록 구현",
+          "실제 사용자들의 피드백을 반영한 로그 분류 알고리즘을 구현하여 사용자들이 필요로 하는 정보에 빠르게 접근할 수 있도록 지원",
+        ],
+      },
+      {
+        title: "성능 최적화 및 코드 품질 개선",
+        description: [
+          <p key="0">
+            중복되는 로그 데이터를 효과적으로 제거하는 로직을 구현하여{" "}
+            <span className="underline">
+              전체적인 데이터 처리 효율성을 30% 이상 향상시킴
+            </span>
+          </p>,
+          "복잡한 로그 처리 로직을 모듈화하여 시스템의 전체적인 복잡도를 감소시키고 코드의 가독성을 향상시킴",
+          "복잡한 폼 상태를 효과적으로 관리하기 위한 커스텀 훅을 개발하여 코드의 재사용성을 높이고 상태 관리의 일관성을 확보",
+        ],
+      },
+      {
+        title: "프로젝트 성과",
+        description: [
+          <p key="0">
+            새로운 프로젝트 생성 시{" "}
+            <span className="underline">
+              전체적인 데이터 처리 효율성을 30% 이상 향상시킴
+            </span>{" "}
+            달성
+          </p>,
+          <p key="1">
+            전체 시스템에 대한{" "}
+            <span className="underline">
+              사용자 만족도 조사에서 4.2/5.0의 높은 점수
+            </span>
+            를 획득하여 프로젝트의 성공적인 안착을 입증
+          </p>,
+        ],
+      },
+      {
+        title: "협업 및 커뮤니케이션",
+        description: [
+          <p key="0">
+            마케팅, TE 팀과 협업하여 사용자 피드백 기반의 활동 로그 설계
+          </p>,
+          <p key="1">
+            다양한 팀원들과의 협력을 통해 효율적인 프로젝트 기획 및 협업 기술을
+            향상시킴
+          </p>,
+        ],
+      },
+    ],
+    techStack: [
+      "JavaScript",
+      "Jquery",
+      "NodeJs",
+      "Express",
+      "SCSS",
+      "MongoDB",
+      "Mongoose",
+      "Git",
+      "GitHub",
+      "Zeplin",
+      "SourceTree",
+    ],
+    feature: [
+      {
+        title: "프로젝트 개요 페이지 개발",
+        items: [
+          "프로젝트 초기 설정(규칙, 목표 등)을 입력할 수 있는 기능 기획 및 구현",
+          "입력 필드 수십 개에서 발생하는 이벤트를 효율적으로 처리하도록 이벤트 관리 구조 설계",
+          "사용자 경험(UX)을 최적화하기 위해 반응형 웹 디자인을 적용하여 테블릿 및 모바일 환경에서도 원활한 사용성 보장",
+          "드래그 앤 드롭 기능 구현 - 사용자 입력 처리 및 인터페이스 개발의 주요 기술적 과제 해결",
+        ],
+      },
+      {
+        title: "활동 로그 페이지 개발",
+        items: [
+          "사용자 활동 로그를 보여주는 인터페이스를 구현하여 사용자들이 필요한 정보를 효율적으로 확인할 수 있도록 구성",
+          "마케팅 및 TE 팀과 협력하여 사용자 피드백을 반영, 필요 없는 로그를 제거하고 유용한 정보만 선별하여 제공",
+          "수십 개의 로그 유형에서 발생한 중복 코드를 모듈화하여 재사용성과 유지보수성을 높임",
+          "프로젝트 및 태스크 뷰 등 각 사용 목적에 맞춘 사용자 인터페이스 및 링크이동 기능 제공",
+        ],
+      },
+      {
+        title: "코드 품질 개선 및 문서화",
+        items: [
+          "함수화 및 모듈화를 통해 코드 복잡성 감소 및 가독성 향상",
+          "DB 테이블 설계 및 함수 명세서 작성으로 프로젝트 관리와 확장성 강화",
+        ],
+      },
+    ],
+    team: ["프론트엔드 1명,", "백엔드 2명,", "디자이너 2명"],
     link: {
       title: "Related",
       related: [

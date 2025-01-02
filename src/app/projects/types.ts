@@ -18,6 +18,7 @@ export interface Project {
   description: ProjectDescription[];
   techStack: string[];
   feature: Feature[];
+  team: string[];
   link: {
     title: string;
     related: React.ReactNode[];
