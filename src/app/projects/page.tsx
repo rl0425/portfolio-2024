@@ -34,13 +34,15 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
 
   return (
     <div className="mb-10 flex flex-col gap-3">
-      <div
-        className="cursor-pointer px-5 pb-3 pt-5"
-        onClick={handlePrevClick}
-        role="button"
-        aria-label="이전 페이지로 이동"
-      >
-        <Icon name="prev" />
+      <div className="flex items-center justify-between">
+        <div
+          className="cursor-pointer px-5 pb-3 pt-5"
+          onClick={handlePrevClick}
+          role="button"
+          aria-label="이전 페이지로 이동"
+        >
+          <Icon name="prev" />
+        </div>
       </div>
       <div>
         <h3 className="px-5 text-[16px] font-bold">{project.title}</h3>
@@ -141,6 +143,17 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-5 px-5">
+          <h3 className="text-[14px] font-bold text-[#222222]">Team</h3>
+          <div className="mt-1 flex flex-wrap gap-1">
+            {project.team.map((item, index) => (
+              <span className="text-[12px]" key={index}>
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="mt-6 px-5">
