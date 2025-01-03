@@ -13,7 +13,10 @@ export interface Feature {
 export interface Project {
   title: string;
   date: string;
-  image: string[];
+  image: {
+    type: "narrow" | "wide";
+    images: string[];
+  };
   mainDescription: React.ReactNode;
   description: ProjectDescription[];
   techStack: string[];

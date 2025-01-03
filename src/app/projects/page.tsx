@@ -55,11 +55,15 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
         <div></div>
         <div className="scrollbar-hide relative my-4 mb-1 w-full overflow-x-auto">
           <div className="flex gap-4">
-            {project.image.map((img, index) => (
+            {project.image.images.map((img, index) => (
               <div
                 key={index}
                 className="border-[#rgb(34 34 34 / 17%)] relative w-[88%] flex-none border-solid first:ml-0"
-                style={{ aspectRatio: "16/9" }}
+                style={{
+                  aspectRatio:
+                    project.image.type === "narrow" ? "16/9" : "9/20",
+                  width: project.image.type === "narrow" ? "88%" : "50%",
+                }}
               >
                 <Image
                   src={img}

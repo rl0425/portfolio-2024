@@ -21,7 +21,7 @@ const PROJECTS: ProjectItem[] = [
   {
     id: 2,
     imageUrl: "/images/qdrop/qdrop_1.png",
-    title: "QDrop",
+    title: "Qdrop",
     url: "qdrop",
   },
   {
@@ -32,9 +32,9 @@ const PROJECTS: ProjectItem[] = [
   },
   {
     id: 4,
-    imageUrl: "/images/enterprise/enterprise_1.png",
-    title: "PROJECT",
-    url: "enterprise_model",
+    imageUrl: "/images/pawwise/pawwise_thumbnail.png",
+    title: "PawWise",
+    url: "pawwise",
   },
   {
     id: 5,
