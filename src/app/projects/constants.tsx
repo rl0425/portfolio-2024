@@ -17,12 +17,15 @@ export const projects: Projects = {
         공유 및 화상 소통 서비스 개발
       </p>
     ),
-    image: [
-      "/images/live/live_1.png",
-      "/images/live/live_2.png",
-      "/images/live/live_4.png",
-      "/images/live/live_5.png",
-    ],
+    image: {
+      type: "narrow",
+      images: [
+        "/images/live/live_1.png",
+        "/images/live/live_2.png",
+        "/images/live/live_4.png",
+        "/images/live/live_5.png",
+      ],
+    },
     description: [
       {
         title: "Agora Video Calling SDK",
@@ -224,15 +227,18 @@ export const projects: Projects = {
         프로젝트와 사용자 간의 관계를 시각적으로 표현하는 페이지를 기획 및 개발
       </p>
     ),
-    image: [
-      "/images/gantt/gantt6.png",
-      "/images/gantt/gantt7.png",
-      "/images/gantt/gantt3.png",
-      "/images/gantt/gantt8.png",
-      "/images/gantt/gantt4.gif",
-      "/images/gantt/gantt5.gif",
-      "/images/gantt/gantt1.png",
-    ],
+    image: {
+      type: "narrow",
+      images: [
+        "/images/gantt/gantt6.png",
+        "/images/gantt/gantt7.png",
+        "/images/gantt/gantt3.png",
+        "/images/gantt/gantt8.png",
+        "/images/gantt/gantt4.gif",
+        "/images/gantt/gantt5.gif",
+        "/images/gantt/gantt1.png",
+      ],
+    },
     description: [
       {
         title: "프론트엔드 및 백엔드 개발",
@@ -398,15 +404,18 @@ export const projects: Projects = {
         엔터프라이즈 모델 기획 및 개발
       </p>
     ),
-    image: [
-      "/images/enterprise/enterprise_7.png",
-      "/images/enterprise/enterprise_3.png",
-      "/images/enterprise/enterprise_1.png",
-      "/images/enterprise/enterprise_2.png",
-      "/images/enterprise/enterprise_4.png",
-      "/images/enterprise/enterprise_5.png",
-      "/images/enterprise/enterprise_6.png",
-    ],
+    image: {
+      type: "narrow",
+      images: [
+        "/images/enterprise/enterprise_7.png",
+        "/images/enterprise/enterprise_3.png",
+        "/images/enterprise/enterprise_1.png",
+        "/images/enterprise/enterprise_2.png",
+        "/images/enterprise/enterprise_4.png",
+        "/images/enterprise/enterprise_5.png",
+        "/images/enterprise/enterprise_6.png",
+      ],
+    },
     description: [
       {
         title: "솔루션 완성도와 활용성 증대",
@@ -554,12 +563,15 @@ export const projects: Projects = {
         사용자들에게 제공하는 서비스 페이지 기획/개발
       </p>
     ),
-    image: [
-      "/images/evaluation/evaluation_1.png",
-      "/images/evaluation/evaluation_2.gif",
-      "/images/evaluation/evaluation_3.png",
-      "/images/evaluation/evaluation_4.png",
-    ],
+    image: {
+      type: "narrow",
+      images: [
+        "/images/evaluation/evaluation_1.png",
+        "/images/evaluation/evaluation_2.gif",
+        "/images/evaluation/evaluation_3.png",
+        "/images/evaluation/evaluation_4.png",
+      ],
+    },
     description: [
       {
         title: "디자인과 배포를 제외한 전반적인 기획 및 개발, 구현 작업 수행",
@@ -730,12 +742,15 @@ export const projects: Projects = {
         전체적인 시스템의 효율성을 향상시킴
       </p>
     ),
-    image: [
-      "/images/summary/summary_2.gif",
-      "/images/summary/summary_1.png",
-      "/images/summary/summary_3.png",
-      "/images/summary/summary_4.png",
-    ],
+    image: {
+      type: "narrow",
+      images: [
+        "/images/summary/summary_2.gif",
+        "/images/summary/summary_1.png",
+        "/images/summary/summary_3.png",
+        "/images/summary/summary_4.png",
+      ],
+    },
     description: [
       {
         title: "디자인과 배포를 제외한 전반적인 기획 및 개발, 구현 작업 수행",
@@ -878,13 +893,16 @@ export const projects: Projects = {
         아키텍처 설계에 중점을 두고 있습니다.
       </p>
     ),
-    image: [
-      "/images/deats/deats_3.png",
-      "/images/deats/deats_4.png",
-      "/images/deats/deats_1.png",
-      "/images/deats/deats_5.png",
-      "/images/deats/deats_6.png",
-    ],
+    image: {
+      type: "narrow",
+      images: [
+        "/images/deats/deats_3.png",
+        "/images/deats/deats_4.png",
+        "/images/deats/deats_1.png",
+        "/images/deats/deats_5.png",
+        "/images/deats/deats_6.png",
+      ],
+    },
     description: [
       {
         title:
@@ -966,16 +984,19 @@ export const projects: Projects = {
         전반을 주도했습니다.
       </p>
     ),
-    image: [
-      "/images/qdrop/qdrop_1.png",
-      "/images/qdrop/qdrop_2.png",
-      "/images/qdrop/qdrop_3.png",
-      "/images/qdrop/qdrop_4.png",
-      "/images/qdrop/qdrop_5.png",
-      "/images/qdrop/qdrop_6.png",
-      "/images/qdrop/qdrop_7.png",
-      "/images/qdrop/qdrop_8.png",
-    ],
+    image: {
+      type: "wide",
+      images: [
+        "/images/qdrop/qdrop_1.png",
+        "/images/qdrop/qdrop_2.png",
+        "/images/qdrop/qdrop_3.png",
+        "/images/qdrop/qdrop_4.png",
+        "/images/qdrop/qdrop_5.png",
+        "/images/qdrop/qdrop_6.png",
+        "/images/qdrop/qdrop_7.png",
+        "/images/qdrop/qdrop_8.png",
+      ],
+    },
     description: [
       {
         title: "프로젝트 관리 및 설계",
@@ -1089,14 +1110,17 @@ export const projects: Projects = {
         메이저 리그의 실시간 데이터를 제공하는 서비스를 성공적으로 구축했습니다.
       </p>
     ),
-    image: [
-      "/images/fotscore/fotscore_1.png",
-      "/images/fotscore/fotscore_4.gif",
-      "/images/fotscore/fotscore_5.gif",
-      "/images/fotscore/fotscore_3.png",
-      "/images/fotscore/fotscore_6.png",
-      "/images/fotscore/fotscore_7.png",
-    ],
+    image: {
+      type: "wide",
+      images: [
+        "/images/fotscore/fotscore_1.png",
+        "/images/fotscore/fotscore_4.gif",
+        "/images/fotscore/fotscore_5.gif",
+        "/images/fotscore/fotscore_3.png",
+        "/images/fotscore/fotscore_6.png",
+        "/images/fotscore/fotscore_7.png",
+      ],
+    },
     description: [
       {
         title: "실시간 경기 정보 시스템 구현",
@@ -1177,6 +1201,135 @@ export const projects: Projects = {
       },
     ],
     team: ["프론트엔드 1명"],
+    link: {
+      title: "Related",
+      related: [
+        <a key="0" href="https://work.clovine.com" className="underline">
+          Clovine
+        </a>,
+      ],
+    },
+  },
+  pawwise: {
+    title: "PawWise",
+    date: "24.12 ~ ing",
+    mainDescription: (
+      <p>
+        PawWise 강아지 입양을 고려하는 예비 반려인들이 실제 반려 생활에서 직면할
+        수 있는 다양한 상황을 간접적으로 체험하고, 유기동물 입양 절차에 대한
+        구체적인 정보를 제공하는 반려견 입양 전후를 위한 체험형 가이드 앱.
+      </p>
+    ),
+    image: {
+      type: "wide",
+      images: [
+        "/images/pawwise/pawwise_1.png",
+        "/images/pawwise/pawwise_2.png",
+        "/images/pawwise/pawwise_3.png",
+        "/images/pawwise/pawwise_4.png",
+        "/images/pawwise/pawwise_5.png",
+        "/images/pawwise/pawwise_6.png",
+        "/images/pawwise/pawwise_7.png",
+        "/images/pawwise/pawwise_8.png",
+        "/images/pawwise/pawwise_9.png",
+        "/images/pawwise/pawwise_10.png",
+        "/images/pawwise/pawwise_11.png",
+        "/images/pawwise/pawwise_12.png",
+        "/images/pawwise/pawwise_13.png",
+      ],
+    },
+    description: [
+      {
+        title: "맞춤형 검색 시스템",
+        description: [
+          <p key="0">
+            OpenAI API를 사용해 단순한 필터링을 넘어 사용자의 생활 환경과
+            선호도를 고려한{" "}
+            <span className="underline">맞춤형 추천 시스템</span>을 개발
+          </p>,
+          <p key="1">
+            주거 환경, 라이프스타일, 경제적 상황 등을 종합적으로 고려하여{" "}
+            <span className="underline">최적의 반려동물을 추천</span>하는 기능
+          </p>,
+        ],
+      },
+      {
+        title: "가상 케어 시스템",
+        description: [
+          <p key="0">
+            실제 반려 생활을 시뮬레이션하는 이 시스템은 Zustand의 상태 관리와
+            React Query의 실시간 데이터 동기화를 활용하여 구현 예정
+            <br />
+            i. 심야 시간대 산책 필요성 알림
+            <br />
+            ii. 갑작스러운 수의사 방문 상황
+            <br />
+            iii. 분리불안 증상 대처 시뮬레이션
+            <br />
+            iv. 예상 지출 관리 및 경고
+            <br />
+            v. 일상적인 케어 루틴 체험
+          </p>,
+        ],
+      },
+      {
+        title: "실제적인 반려 생활 체험",
+        description: [
+          <p key="0">
+            단순한 정보 제공을 넘어, 실시간 알림과 시뮬레이션을 통해{" "}
+            <span className="underline">실제 반려 생활의 리듬을 체험</span> -
+            사용자들이 자신의 생활 패턴과 반려동물 돌봄이 실생활에서 얼마나
+            조화를 이룰 수 있는지 실질적으로 파악
+          </p>,
+        ],
+      },
+    ],
+    techStack: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "React Query",
+      "TailwindCSS",
+      "Zustand",
+      "Supabase",
+      "GraphQL",
+      "Jest",
+      "React Testing Library",
+      "Vercel",
+      "Storybook",
+      "pnpm",
+      "OpenAI",
+      "Git",
+      "GitHub",
+      "Figma",
+    ],
+    feature: [
+      {
+        title: "기술적 구현 전략",
+        items: [
+          "Vercel Analytics를 통한 성능 모니터링",
+          "Sentry를 통한 에러 추적",
+          "Google Analytics를 통한 사용자 행동 분석",
+        ],
+      },
+      {
+        title: "국제화 지원",
+        items: [
+          "i18n을 통한 다국어 지원 준비",
+          "해외 보호소 연동 가능성",
+          "글로벌 반려동물 입양 문화 기여",
+        ],
+      },
+      {
+        title: "AI 통합",
+        items: [
+          "동물 행동 패턴 분석",
+          "최적 매칭 알고리즘",
+          "예측 기반 케어 가이드",
+        ],
+      },
+    ],
+    team: ["프론트엔드 1명,", "디자이너 1명,", "마케터 1명"],
     link: {
       title: "Related",
       related: [
