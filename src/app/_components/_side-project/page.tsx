@@ -14,38 +14,38 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     id: 1,
-    imageUrl: "/images/deats/deat_1.png",
+    imageUrl: "/images/deats/deat_thumbnail.png",
     title: "DEATS",
     url: "deats",
   },
   {
     id: 2,
-    imageUrl: "/images/gantt/gantt9.png",
-    title: "Gantt Chart",
-    url: "gantt_chart",
+    imageUrl: "/images/qdrop/qdrop_1.png",
+    title: "QDrop",
+    url: "qdrop",
   },
   {
     id: 3,
-    imageUrl: "/images/summary/summary_4.png",
-    title: "Project Summary",
-    url: "project_summary",
+    imageUrl: "/images/fotscore/fotscore_3.png",
+    title: "FOTSCORE",
+    url: "fotscore",
   },
   {
     id: 4,
     imageUrl: "/images/enterprise/enterprise_1.png",
-    title: "Enterprise Model",
+    title: "PROJECT",
     url: "enterprise_model",
   },
   {
     id: 5,
     imageUrl: "/images/evaluation/image.png",
-    title: "Project Evaluation",
+    title: "PROJECT",
     url: "project_evaluation",
   },
   {
     id: 6,
     imageUrl: "/images/live/live_6.png",
-    title: "Project 1",
+    title: "PROJECT",
     url: "live_service",
   },
 ];

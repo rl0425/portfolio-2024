@@ -872,140 +872,311 @@ export const projects: Projects = {
     date: "22.04 ~ 22.06",
     mainDescription: (
       <p>
-        결식 아동들을 위한 급식/부식을 무상으로 제공해주는 복지서비스인
-        &quot;아동급식드림카드&quot;를 사용할 수 있는 가게에 대한 정보와 리뷰를
-        제공하고, 사용자가 쉽게 가게를 찾아갈 수 있는 MAP 서비스를 연동하여
-        기존의 복지카드를 쉽게 사용할 수 있는 웹 기획 및 개발
+        사회 취약계층 아동들의 급식 복지 서비스 접근성 향상을 위해,
+        아동급식드림카드 가맹점 정보를 종합적으로 제공하는 웹 서비스를 기획하고
+        개발하고 있습니다. 전반적인 개발 프로세스를 주도하며, 특히 프론트엔드
+        아키텍처 설계에 중점을 두고 있습니다.
       </p>
     ),
     image: [
-      "/images/summary/summary_2.gif",
-      "/images/summary/summary_1.png",
-      "/images/summary/summary_3.png",
-      "/images/summary/summary_4.png",
+      "/images/deats/deats_3.png",
+      "/images/deats/deats_4.png",
+      "/images/deats/deats_1.png",
+      "/images/deats/deats_5.png",
+      "/images/deats/deats_6.png",
     ],
     description: [
       {
-        title: "디자인과 배포를 제외한 전반적인 기획 및 개발, 구현 작업 수행",
+        title:
+          "프로젝트 전체 일정, 리소스, 인원 관리 등을 통한 PM(Project Manager) 역할 수행",
         description: [
           <p key="0">
-            프로젝트의 핵심 기능을 직접 설계하고 구현하며 전체적인 개발 프로세스
-            주도
+            애자일 방법론을 적용한{" "}
+            <span className="underline">스프린트 계획 수립 및 일정 관리</span>{" "}
+            진행
           </p>,
-        ],
-      },
-      {
-        title: "프로젝트 초기 설정 시스템 구축",
-        description: [
-          <p key="0">
-            <span className="underline">
-              프로젝트의 기본 규칙, 목표 설정, 핵심 성과 지표(KPI) 설정 등
-              다양한 형태의 입력 폼을 체계적으로 구현
-            </span>
-            하여 프로젝트 매니저들이 효율적으로 프로젝트를 설정할 수 있도록 지원
+          <p key="1">
+            기술 스택 선정 및 아키텍처 설계 (React, TypeScript 기반)
           </p>,
-        ],
-      },
-      {
-        title: "활동 로그 시스템 개발",
-        description: [
-          <p key="0">
-            프로젝트 내에서 발생하는 모든 사용자 활동을 실시간으로 추적하고
-            기록하는{" "}
+          <p key="2">
+            팀원 간 효율적인 협업을 위한{" "}
             <span className="underline">
-              포괄적인 로깅 시스템을 구축하여 프로젝트의 투명성과 추적성을 확보
-            </span>
-          </p>,
-          "수집된 로그 데이터를 효율적으로 정규화하고 필터링하는 로직을 개발하여 의미 있는 정보만을 선별적으로 제공할 수 있도록 구현",
-          "실제 사용자들의 피드백을 반영한 로그 분류 알고리즘을 구현하여 사용자들이 필요로 하는 정보에 빠르게 접근할 수 있도록 지원",
-        ],
-      },
-      {
-        title: "성능 최적화 및 코드 품질 개선",
-        description: [
-          <p key="0">
-            중복되는 로그 데이터를 효과적으로 제거하는 로직을 구현하여{" "}
-            <span className="underline">
-              전체적인 데이터 처리 효율성을 30% 이상 향상시킴
-            </span>
-          </p>,
-          "복잡한 로그 처리 로직을 모듈화하여 시스템의 전체적인 복잡도를 감소시키고 코드의 가독성을 향상시킴",
-          "복잡한 폼 상태를 효과적으로 관리하기 위한 커스텀 훅을 개발하여 코드의 재사용성을 높이고 상태 관리의 일관성을 확보",
-        ],
-      },
-      {
-        title: "프로젝트 성과",
-        description: [
-          <p key="0">
-            새로운 프로젝트 생성 시{" "}
-            <span className="underline">
-              전체적인 데이터 처리 효율성을 30% 이상 향상시킴
+              Git 브랜치 전략 및 코드 리뷰 프로세스
             </span>{" "}
-            달성
-          </p>,
-          <p key="1">
-            전체 시스템에 대한{" "}
-            <span className="underline">
-              사용자 만족도 조사에서 4.2/5.0의 높은 점수
-            </span>
-            를 획득하여 프로젝트의 성공적인 안착을 입증
+            구축
           </p>,
         ],
       },
       {
-        title: "협업 및 커뮤니케이션",
+        title:
+          "위치 기반 길찾기 맵 서비스 및 대구시 급식카드 사용처 API 확보 및 사용",
         description: [
           <p key="0">
-            마케팅, TE 팀과 협업하여 사용자 피드백 기반의 활동 로그 설계
+            Kakao Maps API를 활용한 가맹점 위치 정보 시각화 구현 중
           </p>,
           <p key="1">
-            다양한 팀원들과의 협력을 통해 효율적인 프로젝트 기획 및 협업 기술을
-            향상시킴
+            대구시 공공 API와 연동하여 실시간 가맹점 정보 업데이트 로직 개발
           </p>,
+          <p key="2">사용자 현재 위치 기반 최적 경로 안내 기능 구현 예정</p>,
+        ],
+      },
+      {
+        title:
+          "모듈화 및 컴포넌트별 개발을 위한 SPA 및 Router를 사용한 MPA 페이지 설계",
+        description: [
+          <p key="0">재사용 가능한 UI 컴포넌트 라이브러리 구축 진행 중</p>,
+          <p key="1">React Query를 활용한 서버 상태 관리 전략 수립</p>,
         ],
       },
     ],
     techStack: [
-      "JavaScript",
-      "Jquery",
+      "TypeScript",
+      "React",
+      "React Query",
+      "Redux",
+      "Kakao Maps API",
       "NodeJs",
       "Express",
       "SCSS",
-      "MongoDB",
-      "Mongoose",
+      "Spring",
+      "MariaDB",
       "Git",
       "GitHub",
-      "Zeplin",
-      "SourceTree",
+      "Figma",
+    ],
+    feature: [],
+    team: ["프론트엔드 1명,", "백엔드 2명,", "디자이너 2명"],
+    link: {
+      title: "Related",
+      related: [
+        <a key="0" href="https://work.clovine.com" className="underline">
+          Clovine
+        </a>,
+      ],
+    },
+  },
+  qdrop: {
+    title: "Qdrop",
+    date: "23.03 ~ 23.05",
+    mainDescription: (
+      <p>
+        IT 분야 취업 준비생들을 위한 종합적인 면접 준비 플랫폼을 기획하고
+        개발했습니다. 실제 면접 경험자들의 질문과 전문가의 답변을 체계적으로
+        제공하는 웹/앱 서비스를 성공적으로 구축하였으며, PM으로서 프로젝트
+        전반을 주도했습니다.
+      </p>
+    ),
+    image: [
+      "/images/qdrop/qdrop_1.png",
+      "/images/qdrop/qdrop_2.png",
+      "/images/qdrop/qdrop_3.png",
+      "/images/qdrop/qdrop_4.png",
+      "/images/qdrop/qdrop_5.png",
+      "/images/qdrop/qdrop_6.png",
+      "/images/qdrop/qdrop_7.png",
+      "/images/qdrop/qdrop_8.png",
+    ],
+    description: [
+      {
+        title: "프로젝트 관리 및 설계",
+        description: [
+          <p key="0">
+            전체 개발 일정 수립 및 리소스 분배를 통한 효율적인 프로젝트 관리
+            수행
+          </p>,
+          <p key="1">웹과 앱 개발의 통합적인 개발 프로세스 구축</p>,
+          <p key="2">
+            기술 스택 선정 및 아키텍처 설계에 대한 의사결정 주도 팀원 간
+            의사결정 주도
+          </p>,
+        ],
+      },
+      {
+        title: "상태 관리 시스템 구축",
+        description: [
+          <p key="0">
+            Redux와 Redux Toolkit을 활용한 효율적인 전역 상태 관리 구현
+          </p>,
+          <p key="1">
+            사용자 데이터, 면접 질문, 답변 등 복잡한 상태를 체계적으로 관리
+          </p>,
+          <p key="2">
+            Redux Toolkit의 createSlice를 활용한 보일러플레이트 코드 최소화
+          </p>,
+        ],
+      },
+      {
+        title: "크로스 플랫폼 개발",
+        description: [
+          <p key="0">
+            React Native를 활용하여 웹 서비스의 모바일 앱 이식 성공
+          </p>,
+          <p key="1">
+            웹과 앱 간의 일관된 사용자 경험 제공을 위한 UI/UX 최적화
+          </p>,
+          <p key="2">PlayStore 앱 등록 및 배포 프로세스 완료</p>,
+        ],
+      },
+    ],
+    techStack: [
+      "React",
+      "Redux",
+      "Redux Toolkit",
+      "React Native",
+      "NodeJs",
+      "Express",
+      "CSS Module",
+      "MySQL",
+      "Spring",
+      "Git",
+      "GitHub",
+      "Figma",
     ],
     feature: [
       {
-        title: "프로젝트 개요 페이지 개발",
+        title: "사용자 인터페이스 및 기능 구현",
         items: [
-          "프로젝트 초기 설정(규칙, 목표 등)을 입력할 수 있는 기능 기획 및 구현",
-          "입력 필드 수십 개에서 발생하는 이벤트를 효율적으로 처리하도록 이벤트 관리 구조 설계",
-          "사용자 경험(UX)을 최적화하기 위해 반응형 웹 디자인을 적용하여 테블릿 및 모바일 환경에서도 원활한 사용성 보장",
-          "드래그 앤 드롭 기능 구현 - 사용자 입력 처리 및 인터페이스 개발의 주요 기술적 과제 해결",
+          "카테고리별 CRUD 기능을 갖춘 게시판 시스템 구현",
+          "인터랙티브한 카테고리 선택 UI 개발 (단일/다중 선택 등)",
+          "스켈레톤 로딩을 활용한 사용자 경험 최적화",
+          "검색 기능 구현 (실시간 인기 검색어, 최근 검색어 쿠키 기반 저장)",
         ],
       },
       {
-        title: "활동 로그 페이지 개발",
+        title: "상태 관리 및 성능 최적화",
         items: [
-          "사용자 활동 로그를 보여주는 인터페이스를 구현하여 사용자들이 필요한 정보를 효율적으로 확인할 수 있도록 구성",
-          "마케팅 및 TE 팀과 협력하여 사용자 피드백을 반영, 필요 없는 로그를 제거하고 유용한 정보만 선별하여 제공",
-          "수십 개의 로그 유형에서 발생한 중복 코드를 모듈화하여 재사용성과 유지보수성을 높임",
-          "프로젝트 및 태스크 뷰 등 각 사용 목적에 맞춘 사용자 인터페이스 및 링크이동 기능 제공",
+          "Redux와 Redux Toolkit을 활용한 전역 상태 관리 시스템 구축",
+          "불필요한 리렌더링 최적화를 통한 성능 향상",
+          "컴포넌트 구조 개선을 통한 렌더링 효율성 증대",
+          "HTTPS 및 CORS 이슈 해결을 통한 안정적인 서버 통신 구현",
         ],
       },
       {
-        title: "코드 품질 개선 및 문서화",
+        title: "사용자 경험 개선",
         items: [
-          "함수화 및 모듈화를 통해 코드 복잡성 감소 및 가독성 향상",
-          "DB 테이블 설계 및 함수 명세서 작성으로 프로젝트 관리와 확장성 강화",
+          "부드러운 페이지 전환 애니메이션 구현",
+          "모바일 환경에 최적화된 터치 인터랙션 개발",
+          "즐겨찾기 및 좋아요 기능을 통한 개인화 서비스 제공",
+          "퀵 이동 기능을 통한 접근성 향상",
+        ],
+      },
+      {
+        title: "회원 관리 시스템",
+        items: [
+          "OAuth 기반 회원가입/로그인 구현",
+          "프로필 관리 기능 개발 (닉네임 변경, 회원 탈퇴)",
+          "개인화된 데이터 관리 (작성 글, 즐겨찾기 모아보기)",
         ],
       },
     ],
-    team: ["프론트엔드 1명,", "백엔드 2명,", "디자이너 2명"],
+    team: ["프론트엔드 1명,", "백엔드 1명,", "디자이너 1명"],
+    link: {
+      title: "Related",
+      related: [
+        <a key="0" href="https://work.clovine.com" className="underline">
+          Clovine
+        </a>,
+      ],
+    },
+  },
+  fotscore: {
+    title: "FOTSCORE",
+    date: "23.02 ~ 23.02",
+    mainDescription: (
+      <p>
+        해외 축구 팬들을 위한 경기 결과, 하이라이트, 순위 정보를 원스톱으로
+        제공하는 웹/앱 서비스를 기획하고 개발했습니다. ESPN API를 활용하여 4대
+        메이저 리그의 실시간 데이터를 제공하는 서비스를 성공적으로 구축했습니다.
+      </p>
+    ),
+    image: [
+      "/images/fotscore/fotscore_1.png",
+      "/images/fotscore/fotscore_4.gif",
+      "/images/fotscore/fotscore_5.gif",
+      "/images/fotscore/fotscore_3.png",
+      "/images/fotscore/fotscore_6.png",
+      "/images/fotscore/fotscore_7.png",
+    ],
+    description: [
+      {
+        title: "실시간 경기 정보 시스템 구현",
+        description: [
+          <p key="0">ESPN API 연동을 통한 실시간 경기 데이터 수집 및 가공</p>,
+          <p key="1">
+            어제/오늘/내일 경기 일정 및 결과 자동 업데이트 시스템 구축
+          </p>,
+          <p key="2">경기별 하이라이트 영상 및 매치 스탯 연동 기능 개발</p>,
+          <p key="3">
+            4개 리그(프리미어리그, 라리가, 세리에A, 분데스리가) 데이터 통합 관리
+          </p>,
+        ],
+      },
+      {
+        title: "데이터 시각화 및 통계 기능",
+        description: [
+          <p key="0">리그별 순위표 실시간 업데이트 시스템 구현</p>,
+          <p key="1">팀/선수 통계 데이터 테이블 구현</p>,
+          <p key="2">실시간 뉴스 및 이슈 피드 개발</p>,
+          <p key="3">데이터 시각화를 통한 직관적인 정보 전달</p>,
+        ],
+      },
+      {
+        title: "사용자 경험 최적화",
+        description: [
+          <p key="0">SPA 구조를 활용한 부드러운 페이지 전환 구현</p>,
+          <p key="1">모바일 환경에 최적화된 터치 인터랙션 개발</p>,
+          <p key="2">스켈레톤 로딩을 통한 데이터 로딩 UX 개선</p>,
+          <p key="2">반응형 레이아웃으로 다양한 디바이스 지원</p>,
+        ],
+      },
+      {
+        title: "1인 프로젝트로서 기획, 디자인, 개발 전 과정 담당",
+        description: [],
+      },
+      {
+        title: "UX/UI 디자인부터 프론트엔드 개발까지 전체 프로세스 경험",
+        description: [],
+      },
+    ],
+    techStack: [
+      "JavaScript",
+      "ES6+",
+      "React",
+      "Redux",
+      "Redux Toolkit",
+      "React Native",
+      "CSS-in-JS",
+      "Git",
+      "GitHub",
+      "Figma",
+    ],
+    feature: [
+      {
+        title: "프론트엔드 아키텍처",
+        items: [
+          "React 컴포넌트 기반 모듈화 설계",
+          "Redux와 Redux Toolkit을 활용한 전역 상태 관리",
+          "코드 스플리팅을 통한 초기 로딩 성능 최적화",
+        ],
+      },
+      {
+        title: "API 통합 및 데이터 처리",
+        items: [
+          "ESPN API 데이터 캐싱 전략 구현",
+          "실시간 데이터 업데이트 로직 최적화",
+          "데이터 정규화를 통한 효율적인 상태 관리",
+        ],
+      },
+      {
+        title: "크로스 플랫폼 대응",
+        items: [
+          "React Native를 활용한 웹앱 구현",
+          "네이티브 앱 수준의 사용자 경험 제공",
+          "웹과 앱의 코드 베이스 통합 관리",
+        ],
+      },
+    ],
+    team: ["프론트엔드 1명"],
     link: {
       title: "Related",
       related: [
