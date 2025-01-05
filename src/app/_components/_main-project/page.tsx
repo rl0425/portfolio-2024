@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 
+/**
+ * 프로젝트 아이템 타입
+ */
 interface ProjectItem {
   id: number;
   imageUrl: string;
@@ -11,6 +14,9 @@ interface ProjectItem {
   url: string;
 }
 
+/**
+ * 프로젝트 목록
+ */
 const PROJECTS: ProjectItem[] = [
   {
     id: 1,
@@ -36,7 +42,6 @@ const PROJECTS: ProjectItem[] = [
     title: "Summary",
     url: "project_summary",
   },
-
   {
     id: 5,
     imageUrl: "/images/evaluation/image.png",
@@ -45,38 +50,22 @@ const PROJECTS: ProjectItem[] = [
   },
 ];
 
+// 애니메이션 및 스타일 정의
 const SHIMMER_STYLES = `
   @keyframes shimmer {
-    0% {
-      background-position: -200% center;
-      opacity: 0.9;
-    }
-    50% {
-      background-position: 0% center;
-      opacity: 1;
-    }
-    100% {
-      background-position: 200% center;
-      opacity: 0.9;
-    }
+    0% { background-position: -200% center; opacity: 0.9; }
+    50% { background-position: 0% center; opacity: 1; }
+    100% { background-position: 200% center; opacity: 0.9; }
   }
 
   .title-shimmer {
-    background: linear-gradient(
-      90deg, 
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 1) 45%,
-      rgba(255, 255, 255, 1) 55%,
-      rgba(255, 255, 255, 0.5) 100%
-    );
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 1) 45%, rgba(255, 255, 255, 1) 55%, rgba(255, 255, 255, 0.5) 100%);
     background-size: 200% 100%;
     background-clip: text;
     -webkit-background-clip: text;
     color: rgba(255, 255, 255, 0.95);
     position: relative;
-    text-shadow: 
-      0 0 10px rgba(255, 255, 255, 0.4),
-      0 0 20px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2);
     font-weight: 700;
   }
 
@@ -108,7 +97,6 @@ const ANIMATION_STYLES = {
 
 const IMAGE_CONTAINER_STYLE =
   "relative flex items-center justify-center rounded-[4px] overflow-hidden transition-transform duration-300 hover:scale-95";
-
 const OVERLAY_STYLE =
   "absolute inset-0 bg-[#0000009e] flex items-center justify-center transition-opacity duration-300";
 
