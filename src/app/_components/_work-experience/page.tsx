@@ -3,9 +3,10 @@
  */
 const STYLES = {
   CONTAINER: "flex flex-col gap-2",
-  MAIN_TITLE: "text-[12px] font-semibold text-[#222222ba]",
+  MAIN_TITLE: "text-[12px] md:text-[14px] font-semibold text-[#222222ba]",
   SUB_TITLE: "ml-4 text-[13px] font-semibold text-[#222222ba]",
-  LIST_ITEM: "ml-8 text-[12px] font-normal text-[#222222ba] leading-[1.5]",
+  LIST_ITEM:
+    "ml-8 text-[12px] md:text-[14px] font-normal text-[#222222ba] leading-[1.5]",
   HIGHLIGHT: "font-semibold text-[#222222]",
 } as const;
 
@@ -15,16 +16,16 @@ const STYLES = {
 export default function WorkExperience() {
   return (
     <div className="bg-white px-5">
-      <div className="mx-auto max-w-[430px] bg-white">
+      <div className="mx-auto bg-white">
         <main className="h-full w-full pt-6">
           <section className="mb-6">
             <h2 className="mb-4 text-[24px] font-bold">WORK EXPERIENCE.</h2>
 
-            <div className="flex flex-col gap-4 text-[12px] font-normal leading-relaxed">
+            <div className="flex flex-col gap-4 text-[12px] font-normal leading-relaxed md:text-[14px]">
               <div>
                 <p className="flex items-center gap-2">
                   <span className="font-semibold">(주)헤븐트리</span>
-                  <span className="text-[12px] font-normal text-[#777676]">
+                  <span className="text-[12px] font-normal text-[#777676] md:text-[14px]">
                     2021년 7월 ~ 2022년 12월
                   </span>
                 </p>
@@ -61,15 +62,8 @@ export default function WorkExperience() {
                   <h4 className={STYLES.SUB_TITLE}>성과 및 기여</h4>
                   <ul className="list-none">
                     <li className={STYLES.LIST_ITEM}>
-                      • 해당 프로젝트를 통해{" "}
-                      <span className={STYLES.HIGHLIGHT}>
-                        100억 원 규모의 투자 유치
-                      </span>{" "}
-                      및{" "}
-                      <span className={STYLES.HIGHLIGHT}>
-                        140개 이상의 고객사 확보
-                      </span>
-                      에 기여
+                      • 해당 프로젝트를 통해 100억 원 규모의 투자 유치 및 140개
+                      이상의 고객사 확보에 기여
                     </li>
                   </ul>
                   <h4 className={STYLES.SUB_TITLE}>
@@ -92,7 +86,7 @@ export default function WorkExperience() {
               <div>
                 <p className="flex items-center gap-2">
                   <span className="font-semibold">(주)클래스유</span>
-                  <span className="text-[12px] font-normal text-[#777676]">
+                  <span className="text-[12px] font-normal text-[#777676] md:text-[14px]">
                     2023년 8월 ~ 2024년 11월
                   </span>
                 </p>
@@ -119,18 +113,17 @@ export default function WorkExperience() {
                 <ul className="list-none">
                   <li className={STYLES.LIST_ITEM}>
                     • 화상 통화(라이브) 서비스 구축
-                    <li className={STYLES.LIST_ITEM}>
-                      • Agora Video SDK를 활용하여 실시간 강의 및 화상 통화
-                      서비스 개발
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      • 170만 명의 학생과 수백 명의 강사가 사용하는 핵심 기능
-                      구현
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      • 화면 및 강의 비디오 공유, 채팅, 소그룹 라이브 등 다양한
-                      기능 지원
-                    </li>
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • Agora Video SDK를 활용하여 실시간 강의 및 화상 통화 서비스
+                    개발
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • 170만 명의 학생과 수백 명의 강사가 사용하는 핵심 기능 구현
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • 화면 및 강의 비디오 공유, 채팅, 소그룹 라이브 등 다양한
+                    기능 지원
                   </li>
                 </ul>
                 {/* 개발 프로세스 개선 */}

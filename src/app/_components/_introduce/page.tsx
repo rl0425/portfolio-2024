@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import clsx from "clsx";
 
 interface IntroductionSection {
@@ -10,19 +10,33 @@ interface IntroductionSection {
 
 const STYLES = {
   CONTAINER: "bg-white px-5",
-  INNER: "mx-auto max-w-[430px] bg-white",
+  INNER: "mx-auto bg-white",
   MAIN: "h-full w-full pt-10",
   SECTION: "mb-4",
   HEADING: "mb-2 text-[24px] font-bold",
-  CONTENT: "flex flex-col gap-1 text-[12px] font-semibold",
+  CONTENT: "flex flex-col gap-1 text-[12px] md:text-[14px] font-semibold",
   BUTTON:
-    "(mt-4 text-[12px] font-medium) (text-blue-500 hover:text-blue-600) (transition-colors duration-200)",
+    "(mt-4 text-[12px] md:text-[12px] font-medium) (text-blue-500 hover:text-blue-600) (transition-colors duration-200)",
 } as const;
 
 const INITIAL_VISIBLE_SECTIONS = 2;
 
 export default function Introduce() {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsExpanded(window.innerWidth >= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleToggleExpand = useCallback(() => {
     setIsExpanded((prev) => !prev);
@@ -94,7 +108,12 @@ export default function Introduce() {
   );
 
   const visibleSections = useMemo(
-    () => (isExpanded ? sections : sections.slice(0, INITIAL_VISIBLE_SECTIONS)),
+    () =>
+      window.innerWidth >= 768
+        ? sections
+        : isExpanded
+          ? sections
+          : sections.slice(0, INITIAL_VISIBLE_SECTIONS),
     [sections, isExpanded],
   );
 
@@ -110,26 +129,29 @@ export default function Introduce() {
             <div className={STYLES.CONTENT}>
               {visibleSections.map((section) => (
                 <div
-                  className="text-[12px] font-normal leading-[1.9] text-[#222222ba]"
+                  className="text-[12px] font-normal leading-[1.9] text-[#222222ba] md:text-[14px]"
                   key={section.id}
                 >
                   {section.content}
                 </div>
               ))}
 
-              {sections.length > INITIAL_VISIBLE_SECTIONS && (
-                <div className="mt-1 w-fit rounded-md bg-[#222222e0] px-5 py-[4px] text-[12px] text-[#ffffff]">
-                  <button
+              {window.innerWidth < 768 &&
+                sections.length > INITIAL_VISIBLE_SECTIONS && (
+                  <div
                     onClick={handleToggleExpand}
-                    className={clsx(STYLES.BUTTON)}
-                    role="button"
-                    aria-expanded={isExpanded}
-                    aria-label={isExpanded ? "LESS" : "MORE"}
+                    className="mt-1 w-fit cursor-pointer rounded-md bg-[#222222e0] px-5 py-[4px] text-[12px] text-[#ffffff] md:text-[14px]"
                   >
-                    {isExpanded ? "LESS" : "MORE"}
-                  </button>
-                </div>
-              )}
+                    <button
+                      className={clsx(STYLES.BUTTON)}
+                      role="button"
+                      aria-expanded={isExpanded}
+                      aria-label={isExpanded ? "접기" : "더보기"}
+                    >
+                      {isExpanded ? "접기" : "더보기"}
+                    </button>
+                  </div>
+                )}
             </div>
           </section>
         </main>
