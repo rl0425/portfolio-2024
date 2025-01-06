@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { projects } from "./constants";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Icon } from "@/components/icon/Icon";
@@ -10,7 +10,7 @@ import Image from "next/image";
  * 더보기 버튼 스타일 상수
  */
 const MORE_BUTTON_STYLE =
-  "text-[12px] font-medium text-blue-500 mt-2 cursor-pointer hover:text-blue-600";
+  "text-[12px] md:text-[14px] font-medium text-blue-500 mt-2 cursor-pointer hover:text-blue-600";
 
 /**
  * 설명 텍스트 최대 표시 줄 수
@@ -23,6 +23,24 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
   const router = useRouter();
   const project = projects[projectName as string];
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(true);
+
+  useEffect(() => {
+    // 초기 화면 크기 확인
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setIsExpanded(window.innerWidth >= 768);
+    };
+
+    // 초기 실행
+    checkScreenSize();
+
+    // 리사이즈 이벤트 리스너
+    window.addEventListener("resize", checkScreenSize);
+
+    // 클린업
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   const handlePrevClick = useCallback(() => {
     router.push("/");
@@ -33,7 +51,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
   }, []);
 
   return (
-    <div className="mb-10 flex flex-col gap-3">
+    <div className="mb-10 flex flex-col gap-3 md:max-w-[1000px]">
       <div className="flex items-center justify-between">
         <div
           className="cursor-pointer px-5 pb-3 pt-5"
@@ -49,7 +67,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
         <p className="px-5 text-[14px] font-medium text-gray-500">
           {project.date}
         </p>
-        <p className="px-5 pt-2 text-[12px] leading-5">
+        <p className="px-5 pt-2 text-[12px] leading-5 md:text-[14px]">
           {project.mainDescription}
         </p>
         <div></div>
@@ -83,7 +101,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
 
         {project.description.map((desc, index) => (
           <div key={index} className="px-5 pt-3">
-            <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229]">
+            <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229] md:text-[14px]">
               {desc.title}
             </h4>
             <div className="ml-3 mt-2">
@@ -93,17 +111,17 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
               ).map((item, idx) => (
                 <div key={idx} className="align-center flex items-start gap-2">
                   <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
-                  <p className="text-[12px] font-normal leading-6">{item}</p>
+                  <p className="text-[12px] font-normal leading-6 md:text-[14px]">
+                    {item}
+                  </p>
                 </div>
               ))}
-              {desc.description.length > MAX_VISIBLE_ITEMS && (
+              {isMobile && desc.description.length > MAX_VISIBLE_ITEMS && (
                 <button
                   onClick={handleToggleExpand}
                   className={MORE_BUTTON_STYLE}
-                  aria-expanded={isExpanded}
-                  aria-label={isExpanded ? "내용 접기" : "더 보기"}
                 >
-                  {isExpanded ? "접기" : "더 보기"}
+                  {isExpanded ? "CLOSE" : "MORE"}
                 </button>
               )}
             </div>
@@ -115,7 +133,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
             {project.techStack.map((tech, index) => (
               <span
                 key={index}
-                className="rounded-[4px] border border-solid border-[#2222224f] bg-[#434040] px-[8px] py-1 text-[12px] font-semibold text-[#ffffff]"
+                className="rounded-[4px] border border-solid border-[#2222224f] bg-[#434040] px-[8px] py-1 text-[12px] font-semibold text-[#ffffff] md:text-[14px]"
               >
                 {tech}
               </span>
@@ -129,7 +147,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
           </h3>
           {project.feature.map((feature, index) => (
             <div key={index} className="mb-2 mt-1 flex flex-col">
-              <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229]">
+              <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229] md:text-[14px]">
                 {feature.title}
               </h4>
               <div className="ml-3 mt-1">
@@ -139,7 +157,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
                     className="align-center flex items-start gap-2"
                   >
                     <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
-                    <p className="text-[12px] font-normal leading-[25px]">
+                    <p className="text-[12px] font-normal leading-[25px] md:text-[14px]">
                       {item}
                     </p>
                   </div>
@@ -153,7 +171,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
           <h3 className="text-[14px] font-bold text-[#222222]">Team</h3>
           <div className="mt-1 flex flex-wrap gap-1">
             {project.team.map((item, index) => (
-              <span className="text-[12px]" key={index}>
+              <span className="text-[12px] md:text-[14px]" key={index}>
                 {item}
               </span>
             ))}
@@ -166,7 +184,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
           </h3>
           <div className="mt-1 flex flex-wrap gap-1">
             {project.link.related.map((item, index) => (
-              <span className="text-[12px]" key={index}>
+              <span className="text-[12px] md:text-[14px]" key={index}>
                 {item}
               </span>
             ))}
@@ -183,7 +201,7 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="flex max-w-full items-center justify-center">
         <ProjectCard projectName={projectName} />
       </div>
     </div>

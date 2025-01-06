@@ -7,7 +7,7 @@ import Channel from "./_components/_channel/page";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="mx-auto min-h-screen max-w-[430px] bg-white">
+      <div className="mx-auto min-h-screen max-w-[430px] bg-white md:max-w-[768px]">
         <main className="h-full w-full">
           <p className="pr-5 pt-3 text-right text-[28px] font-extrabold">
             PARK GI CHAN

@@ -214,7 +214,7 @@ export default function SideProject() {
   if (!isClient) {
     return (
       <div className="bg-white">
-        <div className="mx-auto max-w-[430px] bg-white">
+        <div className="mx-auto bg-white">
           <div className="h-full w-full pt-6">
             <section className="mb-2 px-5">
               <h2 className="mb-3 text-[24px] font-bold">MAIN PROJECT.</h2>
@@ -230,7 +230,7 @@ export default function SideProject() {
 
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-[430px] bg-white">
+      <div className="mx-auto bg-white">
         <div className="h-full w-full pt-6">
           <section className="mb-2 px-5">
             <h2 className="mb-3 text-[24px] font-bold">MAIN PROJECT.</h2>

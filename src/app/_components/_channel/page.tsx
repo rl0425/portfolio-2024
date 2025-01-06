@@ -1,7 +1,7 @@
 export default function Channel() {
   return (
     <div className="bg-white px-5">
-      <div className="mx-auto max-w-[430px] bg-white">
+      <div className="mx-auto bg-white">
         <main className="h-full w-full pt-4">
           <section className="mb-6">
             <h2 className="mb-4 text-[24px] font-bold">CHANNEL.</h2>
