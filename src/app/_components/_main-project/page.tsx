@@ -4,9 +4,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 
-/**
- * 프로젝트 아이템 타입
- */
 interface ProjectItem {
   id: number;
   imageUrl: string;
@@ -14,9 +11,6 @@ interface ProjectItem {
   url: string;
 }
 
-/**
- * 프로젝트 목록
- */
 const PROJECTS: ProjectItem[] = [
   {
     id: 1,
@@ -102,10 +96,16 @@ const OVERLAY_STYLE =
 
 const GRID_LAYOUT_STYLES = {
   container: "grid grid-cols-2 gap-3 h-[600px] min-w-full",
-  leftSection: "relative h-full", // 왼쪽 큰 이미지
-  rightSection: "grid grid-rows-2 gap-3", // 오른쪽 섹션
-  rightTop: "grid grid-cols-2 gap-3", // 오른쪽 상단 2개 이미지
-  rightBottom: "relative h-full", // 오른쪽 하단 긴 이미지
+  leftSection: "relative h-full",
+  rightSection: "grid grid-rows-2 gap-3",
+  rightTop: "grid grid-cols-2 gap-3",
+  rightBottom: "relative h-full",
+} as const;
+
+const STYLES = {
+  mobileView: "md:hidden flex flex-col gap-3 max-h-[340px]",
+  pcView: "hidden md:block",
+  mobileItem: "relative w-full px-5",
 } as const;
 
 export default function MainProject() {
@@ -113,7 +113,6 @@ export default function MainProject() {
   const [isClient, setIsClient] = useState(false);
   const shimmerTimeouts = useRef<{ [key: number]: NodeJS.Timeout }>({});
 
-  // 클라이언트 사이드 마운트 확인
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -171,104 +170,60 @@ export default function MainProject() {
   const renderProjects = useMemo(
     () => (
       <>
-        <div className={GRID_LAYOUT_STYLES.container}>
-          {/* 왼쪽 큰 이미지 */}
-          <div className={GRID_LAYOUT_STYLES.leftSection}>
+        <div className={STYLES.mobileView}>
+          {PROJECTS.map((project, index) => (
             <div
-              className={`${IMAGE_CONTAINER_STYLE} h-full`}
+              key={project.id}
+              className={`${IMAGE_CONTAINER_STYLE} ${STYLES.mobileItem}`}
               role="button"
-              aria-label={`${PROJECTS[0].title} 프로젝트 보기`}
+              aria-label={`${project.title} 프로젝트 보기`}
               onClick={() =>
-                router.push(`/projects?projectName=${PROJECTS[0].url}`)
+                router.push(`/projects?projectName=${project.url}`)
               }
             >
-              <div className="relative h-full w-full">
+              <div className="relative h-[360px] w-full">
                 {isClient && (
                   <div
                     className="absolute inset-0"
                     style={{
-                      animation: `float1 ${6}s ease-in-out infinite`,
+                      animation: `float${(index % 2) + 1} ${
+                        6 + index * 1.5
+                      }s ease-in-out infinite`,
                     }}
                   >
                     <Image
-                      src={PROJECTS[0].imageUrl}
-                      alt={PROJECTS[0].title}
+                      src={project.imageUrl}
+                      alt={project.title}
                       fill
                       className="object-cover"
-                      sizes="50vw"
-                      priority
+                      sizes="100vw"
+                      priority={project.id <= 2}
                     />
                   </div>
                 )}
                 <div className={OVERLAY_STYLE}>
                   <p
-                    id={`title-${PROJECTS[0].id}`}
+                    id={`title-${project.id}`}
                     className="title-shimmer text-center text-xl font-bold"
                     data-animate="false"
                   >
-                    {PROJECTS[0].title}
+                    {project.title}
                   </p>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* 오른쪽 섹션 */}
-          <div className={GRID_LAYOUT_STYLES.rightSection}>
-            {/* 오른쪽 상단 2개 이미지 */}
-            <div className={GRID_LAYOUT_STYLES.rightTop}>
-              {PROJECTS.slice(1, 3).map((project, index) => (
-                <div
-                  key={project.id}
-                  className={IMAGE_CONTAINER_STYLE}
-                  role="button"
-                  aria-label={`${project.title} 프로젝트 보기`}
-                  onClick={() =>
-                    router.push(`/projects?projectName=${project.url}`)
-                  }
-                >
-                  <div className="relative h-full w-full">
-                    {isClient && (
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          animation: `float${(index % 2) + 1} ${
-                            6 + (index + 1) * 1.5
-                          }s ease-in-out infinite`,
-                        }}
-                      >
-                        <Image
-                          src={project.imageUrl}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                          sizes="25vw"
-                          priority
-                        />
-                      </div>
-                    )}
-                    <div className={OVERLAY_STYLE}>
-                      <p
-                        id={`title-${project.id}`}
-                        className="title-shimmer text-center text-xl font-bold"
-                        data-animate="false"
-                      >
-                        {project.title}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* 오른쪽 하단 긴 이미지 */}
-            <div className={GRID_LAYOUT_STYLES.rightBottom}>
+        <div className={STYLES.pcView}>
+          <div className={GRID_LAYOUT_STYLES.container}>
+            <div className={GRID_LAYOUT_STYLES.leftSection}>
               <div
                 className={`${IMAGE_CONTAINER_STYLE} h-full`}
                 role="button"
-                aria-label={`${PROJECTS[3].title} 프로젝트 보기`}
+                aria-label={`${PROJECTS[0].title} 프로젝트 보기`}
                 onClick={() =>
-                  router.push(`/projects?projectName=${PROJECTS[3].url}`)
+                  router.push(`/projects?projectName=${PROJECTS[0].url}`)
                 }
               >
                 <div className="relative h-full w-full">
@@ -276,41 +231,118 @@ export default function MainProject() {
                     <div
                       className="absolute inset-0"
                       style={{
-                        animation: `float1 ${7.5}s ease-in-out infinite`,
+                        animation: `float1 ${6}s ease-in-out infinite`,
                       }}
                     >
                       <Image
-                        src={PROJECTS[3].imageUrl}
-                        alt={PROJECTS[3].title}
+                        src={PROJECTS[0].imageUrl}
+                        alt={PROJECTS[0].title}
                         fill
                         className="object-cover"
                         sizes="50vw"
+                        priority
                       />
                     </div>
                   )}
                   <div className={OVERLAY_STYLE}>
                     <p
-                      id={`title-${PROJECTS[3].id}`}
+                      id={`title-${PROJECTS[0].id}`}
                       className="title-shimmer text-center text-xl font-bold"
                       data-animate="false"
                     >
-                      {PROJECTS[3].title}
+                      {PROJECTS[0].title}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
+
+            <div className={GRID_LAYOUT_STYLES.rightSection}>
+              <div className={GRID_LAYOUT_STYLES.rightTop}>
+                {PROJECTS.slice(1, 3).map((project, index) => (
+                  <div
+                    key={project.id}
+                    className={IMAGE_CONTAINER_STYLE}
+                    role="button"
+                    aria-label={`${project.title} 프로젝트 보기`}
+                    onClick={() =>
+                      router.push(`/projects?projectName=${project.url}`)
+                    }
+                  >
+                    <div className="relative h-full w-full">
+                      {isClient && (
+                        <div
+                          className="absolute inset-0"
+                          style={{
+                            animation: `float${(index % 2) + 1} ${
+                              6 + (index + 1) * 1.5
+                            }s ease-in-out infinite`,
+                          }}
+                        >
+                          <Image
+                            src={project.imageUrl}
+                            alt={project.title}
+                            fill
+                            className="object-cover"
+                            sizes="25vw"
+                            priority
+                          />
+                        </div>
+                      )}
+                      <div className={OVERLAY_STYLE}>
+                        <p
+                          id={`title-${project.id}`}
+                          className="title-shimmer text-center text-xl font-bold"
+                          data-animate="false"
+                        >
+                          {project.title}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className={GRID_LAYOUT_STYLES.rightBottom}>
+                <div
+                  className={`${IMAGE_CONTAINER_STYLE} h-full`}
+                  role="button"
+                  aria-label={`${PROJECTS[3].title} 프로젝트 보기`}
+                  onClick={() =>
+                    router.push(`/projects?projectName=${PROJECTS[3].url}`)
+                  }
+                >
+                  <div className="relative h-full w-full">
+                    {isClient && (
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          animation: `float1 ${7.5}s ease-in-out infinite`,
+                        }}
+                      >
+                        <Image
+                          src={PROJECTS[3].imageUrl}
+                          alt={PROJECTS[3].title}
+                          fill
+                          className="object-cover"
+                          sizes="50vw"
+                        />
+                      </div>
+                    )}
+                    <div className={OVERLAY_STYLE}>
+                      <p
+                        id={`title-${PROJECTS[3].id}`}
+                        className="title-shimmer text-center text-xl font-bold"
+                        data-animate="false"
+                      >
+                        {PROJECTS[3].title}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="flex items-center justify-center">
-          <div
-            className={`${IMAGE_CONTAINER_STYLE} h-full`}
-            role="button"
-            aria-label={`${PROJECTS[0].title} 프로젝트 보기`}
-            onClick={() =>
-              router.push(`/projects?projectName=${PROJECTS[0].url}`)
-            }
-          ></div>
         </div>
       </>
     ),
@@ -341,10 +373,7 @@ export default function MainProject() {
           <section className="mb-2 px-5">
             <h2 className="mb-3 text-[24px] font-bold">MAIN PROJECT.</h2>
           </section>
-          <div className="flex overflow-x-auto bg-white pl-5 pr-5">
-            {renderProjects}
-            <div className="min-w-[16px]" />
-          </div>
+          <div className="bg-white">{renderProjects}</div>
         </div>
       </div>
     </div>
