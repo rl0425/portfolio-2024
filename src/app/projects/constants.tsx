@@ -230,13 +230,13 @@ export const projects: Projects = {
     image: {
       type: "narrow",
       images: [
-        "/images/gantt/gantt6.png",
-        "/images/gantt/gantt7.png",
-        "/images/gantt/gantt3.png",
-        "/images/gantt/gantt8.png",
-        "/images/gantt/gantt4.gif",
-        "/images/gantt/gantt5.gif",
-        "/images/gantt/gantt1.png",
+        "/images/gantt/gantt_6.png",
+        "/images/gantt/gantt_7.png",
+        "/images/gantt/gantt_3.png",
+        "/images/gantt/gantt_8.png",
+        "/images/gantt/gantt_4.gif",
+        "/images/gantt/gantt_5.gif",
+        "/images/gantt/gantt_1.png",
       ],
     },
     description: [

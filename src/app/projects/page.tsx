@@ -22,7 +22,7 @@ const MAX_VISIBLE_ITEMS = 3;
  * 스타일 상수
  */
 const STYLES = {
-  imageContainer: "relative my-4 mb-1 w-full",
+  imageContainer: "relative my-4 mb-1 md:px-5 md:h-[340px] w-full",
   imageWrapper: "flex gap-4 relative",
   imageItem:
     "border-[#rgb(34 34 34 / 17%)] relative flex-none border-solid first:ml-0",
@@ -45,9 +45,6 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(true);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [slideDirection, setSlideDirection] = useState<"left" | "right">(
-    "right",
-  );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -76,14 +73,12 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
   }, []);
 
   const handlePrevSlide = useCallback(() => {
-    setSlideDirection("left");
     setCurrentIndex((prev) =>
       prev === 0 ? project.image.images.length - 1 : prev - 1,
     );
   }, [project.image.images.length]);
 
   const handleNextSlide = useCallback(() => {
-    setSlideDirection("right");
     setCurrentIndex((prev) =>
       prev === project.image.images.length - 1 ? 0 : prev + 1,
     );
@@ -130,211 +125,232 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
   }, [isModalOpen, handleCloseModal]);
 
   return (
-    <div className="mb-10 flex flex-col gap-3 md:max-w-[1000px]">
-      <div className="flex items-center justify-between">
-        <div
-          className="cursor-pointer px-5 pb-3 pt-5"
-          onClick={handlePrevClick}
-          role="button"
-          aria-label="이전 페이지로 이동"
-        >
-          <Icon name="prev" />
+    <div className="mb-10 flex flex-col gap-3">
+      {/* 상단 고정 헤더 */}
+      <div className="fixed left-0 top-0 z-40 flex w-full justify-center bg-white/80 backdrop-blur-sm">
+        <div className="w-full md:max-w-[600px]">
+          <div
+            className="cursor-pointer px-5 py-4 transition-colors hover:bg-gray-100/50"
+            onClick={handlePrevClick}
+            role="button"
+            aria-label="이전 페이지로 이동"
+          >
+            <Icon name="prev" className="h-5 w-5" />
+          </div>
         </div>
       </div>
-      <div>
-        <h3 className="px-5 text-[16px] font-bold">{project.title}</h3>
-        <p className="px-5 text-[14px] font-medium text-gray-500">
-          {project.date}
-        </p>
-        <p className="px-5 pt-2 text-[12px] leading-5 md:text-[14px]">
-          {project.mainDescription}
-        </p>
-        <div></div>
-        <div className={STYLES.imageContainer}>
-          {/* 모바일 뷰 */}
-          <div className={`${STYLES.mobileScroll} md:hidden`}>
-            <div className="flex gap-4">
-              {project.image.images.map((img, index) => (
-                <div
-                  key={index}
-                  className={STYLES.imageItem}
-                  style={{
-                    aspectRatio:
-                      project.image.type === "narrow" ? "16/9" : "9/20",
-                    width: project.image.type === "narrow" ? "88%" : "50%",
-                  }}
-                >
-                  <Image
-                    src={img}
-                    alt={`${project.title} Image ${index + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="80vw"
-                    priority={index === 0}
-                  />
+
+      {/* 메인 컨텐츠 - 중앙 정렬 유지 */}
+      <div className="flex w-full justify-center">
+        <div className="w-full md:max-w-[600px]">
+          <div className="mt-[60px]">
+            <h3 className="px-5 text-[16px] font-bold md:text-[18px]">
+              {project.title}
+            </h3>
+            <p className="px-5 text-[14px] font-medium text-gray-500 md:text-[16px]">
+              {project.date}
+            </p>
+            <p className="px-5 pt-2 text-[12px] leading-5 md:text-[14px]">
+              {project.mainDescription}
+            </p>
+            <div></div>
+            <div className={STYLES.imageContainer}>
+              {/* 모바일 뷰 */}
+              <div className={`${STYLES.mobileScroll} md:hidden`}>
+                <div className="flex gap-4">
+                  {project.image.images.map((img, index) => (
+                    <div
+                      key={index}
+                      className={STYLES.imageItem}
+                      style={{
+                        aspectRatio:
+                          project.image.type === "narrow" ? "16/9" : "9/20",
+                        width: project.image.type === "narrow" ? "88%" : "50%",
+                      }}
+                    >
+                      <Image
+                        src={img}
+                        alt={`${project.title} Image ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="80vw"
+                        priority={index === 0}
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
 
-          {/* PC 뷰 */}
-          <div className="relative hidden h-[500px] overflow-hidden md:block">
-            <motion.div
-              className="flex h-full cursor-pointer"
-              animate={{ x: `${-100 * currentIndex}%` }}
-              transition={{ type: "tween", duration: 0.3 }}
-            >
-              {project.image.images.map((img, index) => (
-                <div
-                  key={index}
-                  className="h-full w-full flex-shrink-0"
-                  onClick={handleImageClick}
-                  role="button"
-                  aria-label="이미지 전체화면으로 보기"
+              {/* PC 뷰 */}
+              <div className="relative hidden h-[340px] overflow-hidden md:block md:h-[340px]">
+                <motion.div
+                  className="flex h-full cursor-pointer"
+                  animate={{ x: `${-100 * currentIndex}%` }}
+                  transition={{ type: "tween", duration: 0.3 }}
                 >
-                  <div className="relative h-full w-full">
-                    <Image
-                      src={img}
-                      alt={`${project.title} Image ${index + 1}`}
-                      fill
-                      className="object-contain"
-                      sizes="80vw"
-                      priority={index === 0}
-                    />
-                  </div>
-                </div>
-              ))}
-            </motion.div>
+                  {project.image.images.map((img, index) => (
+                    <div
+                      key={index}
+                      className="h-full w-full flex-shrink-0"
+                      onClick={handleImageClick}
+                      role="button"
+                      aria-label="이미지 전체화면으로 보기"
+                    >
+                      <div className="relative h-full w-full">
+                        <Image
+                          src={img}
+                          alt={`${project.title} Image ${index + 1}`}
+                          fill
+                          className="object-contain"
+                          sizes="80vw"
+                          priority={index === 0}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
 
-            {/* 네비게이션 화살표 */}
-            <button
-              className={`${STYLES.arrowButton} left-4`}
-              onClick={handlePrevSlide}
-              aria-label="이전 이미지"
-            >
-              <Icon name="prev" className="h-6 w-6 text-white" />
-            </button>
-            <button
-              className={`${STYLES.arrowButton} right-4`}
-              onClick={handleNextSlide}
-              aria-label="다음 이미지"
-            >
-              <Icon name="next" className="h-6 w-6 text-white" />
-            </button>
-
-            {/* 페이지 인디케이터 */}
-            <div className={STYLES.pageIndicator}>
-              {currentIndex + 1} / {project.image.images.length}
-            </div>
-
-            {/* 페이지네이션 닷 */}
-            <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
-              {project.image.images.map((_, index) => (
+                {/* 네비게이션 화살표 */}
                 <button
-                  key={index}
-                  className={`h-2 w-2 rounded-full transition-colors ${
-                    currentIndex === index ? "bg-white" : "bg-white/50"
-                  }`}
-                  onClick={() => setCurrentIndex(index)}
-                  aria-label={`${index + 1}번 이미지로 이동`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-        {/* <h3 className="px-5 text-[20px] font-bold text-[#222222]">
-          Description
-        </h3> */}
-
-        {project.description.map((desc, index) => (
-          <div key={index} className="px-5 pt-3">
-            <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229] md:text-[14px]">
-              {desc.title}
-            </h4>
-            <div className="ml-3 mt-2">
-              {(isExpanded
-                ? desc.description
-                : desc.description.slice(0, MAX_VISIBLE_ITEMS)
-              ).map((item, idx) => (
-                <div key={idx} className="align-center flex items-start gap-2">
-                  <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
-                  <p className="text-[12px] font-normal leading-6 md:text-[14px]">
-                    {item}
-                  </p>
-                </div>
-              ))}
-              {isMobile && desc.description.length > MAX_VISIBLE_ITEMS && (
-                <button
-                  onClick={handleToggleExpand}
-                  className={MORE_BUTTON_STYLE}
+                  className={`${STYLES.arrowButton} left-4`}
+                  onClick={handlePrevSlide}
+                  aria-label="이전 이미지"
                 >
-                  {isExpanded ? "CLOSE" : "MORE"}
+                  <Icon name="prev" className="h-6 w-6 text-white" />
                 </button>
-              )}
-            </div>
-          </div>
-        ))}
-        <div className="mt-8 px-5">
-          <h3 className="text-[16px] font-bold text-[#222222]">Tech Stack</h3>
-          <div className="mt-1 flex flex-wrap gap-1">
-            {project.techStack.map((tech, index) => (
-              <span
-                key={index}
-                className="rounded-[4px] border border-solid border-[#2222224f] bg-[#434040] px-[8px] py-1 text-[12px] font-semibold text-[#ffffff] md:text-[14px]"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
+                <button
+                  className={`${STYLES.arrowButton} right-4`}
+                  onClick={handleNextSlide}
+                  aria-label="다음 이미지"
+                >
+                  <Icon name="next" className="h-6 w-6 text-white" />
+                </button>
 
-        <div className="mt-10 px-5">
-          <h3 className="mb-4 text-[16px] font-bold text-[#222222]">
-            Features And Page{" "}
-          </h3>
-          {project.feature.map((feature, index) => (
-            <div key={index} className="mb-2 mt-1 flex flex-col">
-              <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229] md:text-[14px]">
-                {feature.title}
-              </h4>
-              <div className="ml-3 mt-1">
-                {feature.items.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="align-center flex items-start gap-2"
+                {/* 페이지 인디케이터 */}
+                <div className={STYLES.pageIndicator}>
+                  {currentIndex + 1} / {project.image.images.length}
+                </div>
+
+                {/* 페이지네이션 닷 */}
+                <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                  {project.image.images.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`h-2 w-2 rounded-full transition-colors ${
+                        currentIndex === index ? "bg-white" : "bg-white/50"
+                      }`}
+                      onClick={() => setCurrentIndex(index)}
+                      aria-label={`${index + 1}번 이미지로 이동`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {!isMobile && (
+              <h3 className="ml-5 mt-5 text-[16px] font-bold text-[#222222] underline md:text-[18px]">
+                Description
+              </h3>
+            )}
+
+            {project.description.map((desc, index) => (
+              <div key={index} className="px-5 pt-3">
+                <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229] md:text-[14px]">
+                  {desc.title}
+                </h4>
+                <div className="ml-3 mt-2 md:flex md:flex-col md:gap-2">
+                  {(isExpanded
+                    ? desc.description
+                    : desc.description.slice(0, MAX_VISIBLE_ITEMS)
+                  ).map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="align-center flex items-start gap-2"
+                    >
+                      <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
+                      <p className="text-[12px] font-normal leading-6 md:text-[14px] md:leading-6">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                  {isMobile && desc.description.length > MAX_VISIBLE_ITEMS && (
+                    <button
+                      onClick={handleToggleExpand}
+                      className={MORE_BUTTON_STYLE}
+                    >
+                      {isExpanded ? "CLOSE" : "MORE"}
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
+            <div className="mt-8 px-5">
+              <h3 className="mb-4 text-[16px] font-bold text-[#222222] underline md:text-[18px]">
+                Tech Stack
+              </h3>
+              <div className="mt-1 flex flex-wrap gap-2">
+                {project.techStack.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="cursor-default rounded-[4px] bg-[#f5f5f5] px-4 py-2 text-[14px] font-medium text-[#444444] transition-all hover:bg-[#e0e0e0]"
                   >
-                    <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
-                    <p className="text-[12px] font-normal leading-[25px] md:text-[14px]">
-                      {item}
-                    </p>
-                  </div>
+                    {tech}
+                  </span>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
 
-        <div className="mt-5 px-5">
-          <h3 className="text-[14px] font-bold text-[#222222]">Team</h3>
-          <div className="mt-1 flex flex-wrap gap-1">
-            {project.team.map((item, index) => (
-              <span className="text-[12px] md:text-[14px]" key={index}>
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
+            <div className="mt-10 px-5">
+              <h3 className="mb-4 text-[16px] font-bold text-[#222222] underline md:text-[18px]">
+                Features And Page{" "}
+              </h3>
+              {project.feature.map((feature, index) => (
+                <div key={index} className="mb-2 mt-1 flex flex-col">
+                  <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229] md:text-[14px]">
+                    {feature.title}
+                  </h4>
+                  <div className="mb-2 ml-3 mt-1">
+                    {feature.items.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="align-center flex items-start gap-2"
+                      >
+                        <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
+                        <p className="text-[12px] font-normal leading-[25px] md:text-[14px]">
+                          {item}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
 
-        <div className="mt-6 px-5">
-          <h3 className="text-[14px] font-bold text-[#222222]">
-            {project.link.title}
-          </h3>
-          <div className="mt-1 flex flex-wrap gap-1">
-            {project.link.related.map((item, index) => (
-              <span className="text-[12px] md:text-[14px]" key={index}>
-                {item}
-              </span>
-            ))}
+            <div className="mt-5 px-5">
+              <h3 className="text-[16px] font-bold text-[#222222] underline md:text-[18px]">
+                Team
+              </h3>
+              <div className="mt-1 flex flex-wrap gap-1">
+                {project.team.map((item, index) => (
+                  <span className="text-[12px] md:text-[14px]" key={index}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 px-5">
+              <h3 className="text-[16px] font-bold text-[#222222] underline md:text-[18px]">
+                Related
+              </h3>
+              <div className="mt-1 flex flex-wrap gap-1">
+                {project.link.related.map((item, index) => (
+                  <span className="text-[12px] md:text-[14px]" key={index}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

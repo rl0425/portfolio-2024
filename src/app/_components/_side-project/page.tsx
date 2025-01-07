@@ -14,27 +14,27 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     id: 1,
-    imageUrl: "/images/deats/deat_thumbnail.png",
+    imageUrl: "/images/pawwise/image.png",
+    title: "PawWise",
+    url: "pawwise",
+  },
+  {
+    id: 2,
+    imageUrl: "/images/deats/deats_1.png",
     title: "DEATS",
     url: "deats",
   },
   {
-    id: 2,
+    id: 3,
     imageUrl: "/images/qdrop/qdrop_1.png",
     title: "Qdrop",
     url: "qdrop",
   },
   {
-    id: 3,
-    imageUrl: "/images/fotscore/fotscore_3.png",
+    id: 4,
+    imageUrl: "/images/fotscore/fotscore_4.gif",
     title: "FOTSCORE",
     url: "fotscore",
-  },
-  {
-    id: 4,
-    imageUrl: "/images/pawwise/pawwise_thumbnail.png",
-    title: "PawWise",
-    url: "pawwise",
   },
 ];
 
@@ -51,7 +51,7 @@ const SHIMMER_STYLES = `
     background-size: 200% 100%;
     background-clip: text;
     -webkit-background-clip: text;
-    color: rgba(255, 255, 255, 0.95);
+    color: #ffffff00;
     position: relative;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2);
     font-weight: 700;
@@ -63,7 +63,7 @@ const SHIMMER_STYLES = `
 `;
 
 const ANIMATION_STYLES = {
-  image1: `
+  mobile1: `
     @keyframes float1 {
       0% { transform: translate(0, 0) rotate(0deg); }
       25% { transform: translate(15px, 20px) rotate(3deg); }
@@ -72,7 +72,7 @@ const ANIMATION_STYLES = {
       100% { transform: translate(0, 0) rotate(0deg); }
     }
   `,
-  image2: `
+  mobile2: `
     @keyframes float2 {
       0% { transform: translate(0, 0) rotate(0deg); }
       25% { transform: translate(-12px, 18px) rotate(-4deg); }
@@ -81,17 +81,32 @@ const ANIMATION_STYLES = {
       100% { transform: translate(0, 0) rotate(0deg); }
     }
   `,
+  pc1: `
+    @keyframes pcFloat1 {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(8px, -8px); }
+      100% { transform: translate(0, 0); }
+    }
+  `,
+  pc2: `
+    @keyframes pcFloat2 {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-8px, 5px); }
+      100% { transform: translate(0, 0); }
+    }
+  `,
 } as const;
 
 const IMAGE_CONTAINER_STYLE =
   "relative flex items-center justify-center rounded-[4px] overflow-hidden transition-transform duration-300 hover:scale-95";
 const OVERLAY_STYLE =
-  "absolute inset-0 bg-[#0000009e] flex items-center justify-center transition-opacity duration-300";
+  "absolute inset-0 bg-[#00000038] flex items-center justify-center transition-opacity duration-300";
 
 const GRID_LAYOUT_STYLES = {
-  container: "grid grid-cols-2 gap-3 h-[600px] min-w-full",
+  container: "grid grid-cols-2 gap-3 h-[400px] min-w-full",
   leftSection: "relative h-full",
   rightSection: "grid grid-rows-2 gap-3",
+  bottomSection: "relative h-[200px] mt-2",
   rightTop: "grid grid-cols-2 gap-3",
   rightBottom: "relative h-full",
 } as const;
@@ -102,7 +117,7 @@ const STYLES = {
   mobileItem: "relative w-full px-5",
 } as const;
 
-export default function MainProject() {
+export default function SideProject() {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const shimmerTimeouts = useRef<{ [key: number]: NodeJS.Timeout }>({});
@@ -198,7 +213,7 @@ export default function MainProject() {
                 <div className={OVERLAY_STYLE}>
                   <p
                     id={`title-${project.id}`}
-                    className="title-shimmer text-center text-xl font-bold"
+                    className="title-shimmer text-center text-xl font-bold text-[#ffffff00]"
                     data-animate="false"
                   >
                     {project.title}
@@ -213,24 +228,22 @@ export default function MainProject() {
           <div className={GRID_LAYOUT_STYLES.container}>
             <div className={GRID_LAYOUT_STYLES.rightSection}>
               <div className={GRID_LAYOUT_STYLES.rightTop}>
-                {PROJECTS.slice(1, 3).map((project, index) => (
+                {PROJECTS.slice(2, 4).map((project, index) => (
                   <div
                     key={project.id}
-                    className={IMAGE_CONTAINER_STYLE}
-                    role="button"
-                    aria-label={`${project.title} 프로젝트 보기`}
-                    onClick={() =>
-                      router.push(`/projects?projectName=${project.url}`)
-                    }
+                    className={`${IMAGE_CONTAINER_STYLE} overflow-hidden`}
                   >
-                    <div className="relative h-full w-full">
+                    <div
+                      className="relative h-full w-full cursor-pointer"
+                      onClick={() =>
+                        router.push(`/projects?projectName=${project.url}`)
+                      }
+                    >
                       {isClient && (
                         <div
                           className="absolute inset-0"
                           style={{
-                            animation: `float${(index % 2) + 1} ${
-                              6 + (index + 1) * 1.5
-                            }s ease-in-out infinite`,
+                            animation: `pcFloat${(index % 2) + 1} ${5 + index}s ease-in-out infinite`,
                           }}
                         >
                           <Image
@@ -259,24 +272,24 @@ export default function MainProject() {
 
               <div className={GRID_LAYOUT_STYLES.rightBottom}>
                 <div
-                  className={`${IMAGE_CONTAINER_STYLE} h-full`}
-                  role="button"
-                  aria-label={`${PROJECTS[3].title} 프로젝트 보기`}
-                  onClick={() =>
-                    router.push(`/projects?projectName=${PROJECTS[3].url}`)
-                  }
+                  className={`${IMAGE_CONTAINER_STYLE} h-full overflow-hidden`}
                 >
-                  <div className="relative h-full w-full">
+                  <div
+                    className="relative h-full w-full cursor-pointer"
+                    onClick={() =>
+                      router.push(`/projects?projectName=${PROJECTS[2].url}`)
+                    }
+                  >
                     {isClient && (
                       <div
                         className="absolute inset-0"
                         style={{
-                          animation: `float1 ${7.5}s ease-in-out infinite`,
+                          animation: `pcFloat2 4.5s ease-in-out infinite`,
                         }}
                       >
                         <Image
-                          src={PROJECTS[3].imageUrl}
-                          alt={PROJECTS[3].title}
+                          src={PROJECTS[1].imageUrl}
+                          alt={PROJECTS[1].title}
                           fill
                           className="object-cover"
                           sizes="50vw"
@@ -285,11 +298,11 @@ export default function MainProject() {
                     )}
                     <div className={OVERLAY_STYLE}>
                       <p
-                        id={`title-${PROJECTS[3].id}`}
+                        id={`title-${PROJECTS[2].id}`}
                         className="title-shimmer text-center text-xl font-bold"
                         data-animate="false"
                       >
-                        {PROJECTS[3].title}
+                        {PROJECTS[1].title}
                       </p>
                     </div>
                   </div>
@@ -298,19 +311,19 @@ export default function MainProject() {
             </div>
             <div className={GRID_LAYOUT_STYLES.leftSection}>
               <div
-                className={`${IMAGE_CONTAINER_STYLE} h-full`}
-                role="button"
-                aria-label={`${PROJECTS[0].title} 프로젝트 보기`}
-                onClick={() =>
-                  router.push(`/projects?projectName=${PROJECTS[0].url}`)
-                }
+                className={`${IMAGE_CONTAINER_STYLE} h-full overflow-hidden`}
               >
-                <div className="relative h-full w-full">
+                <div
+                  className="relative h-full w-full cursor-pointer"
+                  onClick={() =>
+                    router.push(`/projects?projectName=${PROJECTS[0].url}`)
+                  }
+                >
                   {isClient && (
                     <div
                       className="absolute inset-0"
                       style={{
-                        animation: `float1 ${6}s ease-in-out infinite`,
+                        animation: `pcFloat1 4s ease-in-out infinite`,
                       }}
                     >
                       <Image
@@ -366,7 +379,7 @@ export default function MainProject() {
           <section className="mb-2 px-5">
             <h2 className="mb-3 text-[24px] font-bold">MAIN PROJECT.</h2>
           </section>
-          <div className="bg-white">{renderProjects}</div>
+          <div className="bg-white md:px-5">{renderProjects}</div>
         </div>
       </div>
     </div>
