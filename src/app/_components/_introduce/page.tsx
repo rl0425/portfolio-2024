@@ -11,10 +11,10 @@ interface IntroductionSection {
 const STYLES = {
   CONTAINER: "bg-white px-5",
   INNER: "mx-auto bg-white",
-  MAIN: "h-full w-full pt-10",
+  MAIN: "h-full w-full pt-6",
   SECTION: "mb-4",
-  HEADING: "mb-2 text-[24px] font-bold",
-  CONTENT: "flex flex-col gap-1 text-[12px] md:text-[14px] font-semibold",
+  HEADING: "mb-1 text-[24px] font-bold",
+  CONTENT: "flex flex-col gap-1 text-[14px] md:text-[14px] font-semibold",
   BUTTON:
     "(mt-4 text-[12px] md:text-[12px] font-medium) (text-blue-500 hover:text-blue-600) (transition-colors duration-200)",
 } as const;
@@ -57,9 +57,10 @@ export default function Introduce() {
         id: 2,
         content: (
           <>
-            첫 직장에서는 프로젝트 관리 도구(PPM)의 핵심 기능인
-            <span className="font-semibold"> 간트차트 (Gantt Chart) </span>
-            페이지를 설계 및 구현하여,{" "}
+            첫 직장에서는 프로젝트 관리 도구(PPM)의 핵심 기능인{" "}
+            <span className="font-semibold"> 간트차트 (Gantt Chart)</span>,
+            프로젝트 생성 및 관리에 필요한 모든 페이지를 직접 설계 및 구현하거나
+            직접적인 도움을 제공하여{" "}
             <span className="font-semibold">
               100억 원 규모의 투자 유치와 140개 이상의 고객사 확보에 기여
             </span>
@@ -129,7 +130,7 @@ export default function Introduce() {
             <div className={STYLES.CONTENT}>
               {visibleSections.map((section) => (
                 <div
-                  className="text-[12px] font-normal leading-[1.9] text-[#222222ba] md:text-[14px]"
+                  className="text-[13px] font-normal leading-[1.9] text-[#222222ba] md:text-[14px]"
                   key={section.id}
                 >
                   {section.content}

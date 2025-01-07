@@ -4,6 +4,8 @@ import MainProject from "./_components/_main-project/page";
 import SideProject from "./_components/_side-project/page";
 import Contact from "./_components/_contact/page";
 import Channel from "./_components/_channel/page";
+import Skills from "./_components/_skills/page";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -14,6 +16,7 @@ export default function Home() {
           </p>
           <Introduce />
           <WorkExperience />
+          <Skills />
           <MainProject />
           <SideProject />
           <Contact />
