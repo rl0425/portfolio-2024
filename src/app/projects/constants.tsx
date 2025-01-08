@@ -20,10 +20,17 @@ export const projects: Projects = {
     image: {
       type: "narrow",
       images: [
-        "/images/live/live_1.png",
-        "/images/live/live_2.png",
-        "/images/live/live_4.png",
-        "/images/live/live_5.png",
+        "/images/live/live_6.png",
+        "/images/live/live_8.png",
+        "/images/live/live_9.png",
+        "/images/live/live_10.png",
+        "/images/live/live_12.png",
+        "/images/live/live_18.png",
+        "/images/live/live_19.png",
+        "/images/live/live_20.png",
+        "/images/live/live_21.png",
+        "/images/live/live_22.png",
+        "/images/live/live_23.png",
       ],
     },
     description: [
@@ -386,7 +393,7 @@ export const projects: Projects = {
     link: {
       title: "Related",
       related: [
-        <a key="0" href="https://work.clovine.com" className="underline">
+        <a key="0" href="https://clovine.co.kr/kr/gantt" className="underline">
           Clovine
         </a>,
       ],
@@ -548,7 +555,11 @@ export const projects: Projects = {
     link: {
       title: "Related",
       related: [
-        <a key="0" href="https://work.clovine.com" className="underline">
+        <a
+          key="0"
+          href="https://clovine.co.kr/kr/partners"
+          className="underline"
+        >
           Clovine
         </a>,
       ],
@@ -724,7 +735,7 @@ export const projects: Projects = {
     link: {
       title: "Related",
       related: [
-        <a key="0" href="https://work.clovine.com" className="underline">
+        <a key="0" href="https://clovine.co.kr/kr" className="underline">
           Clovine
         </a>,
       ],
@@ -876,7 +887,7 @@ export const projects: Projects = {
     link: {
       title: "Related",
       related: [
-        <a key="0" href="https://work.clovine.com" className="underline">
+        <a key="0" href="https://clovine.co.kr/kr" className="underline">
           Clovine
         </a>,
       ],
@@ -966,11 +977,7 @@ export const projects: Projects = {
     team: ["프론트엔드 1명,", "백엔드 2명,", "디자이너 2명"],
     link: {
       title: "Related",
-      related: [
-        <a key="0" href="https://work.clovine.com" className="underline">
-          Clovine
-        </a>,
-      ],
+      related: [],
     },
   },
   qdrop: {
@@ -1094,8 +1101,12 @@ export const projects: Projects = {
     link: {
       title: "Related",
       related: [
-        <a key="0" href="https://work.clovine.com" className="underline">
-          Clovine
+        <a
+          key="0"
+          href="https://velog.io/@rl0425/Qdrop-%ED%9A%8C%EA%B3%A0%EB%A1%9D"
+          className="underline"
+        >
+          Blog
         </a>,
       ],
     },
@@ -1204,8 +1215,12 @@ export const projects: Projects = {
     link: {
       title: "Related",
       related: [
-        <a key="0" href="https://work.clovine.com" className="underline">
-          Clovine
+        <a
+          key="0"
+          href="https://velog.io/@rl0425/FOTSCORE-%ED%9A%8C%EA%B3%A0%EB%A1%9D"
+          className="underline"
+        >
+          Blog
         </a>,
       ],
     },
@@ -1332,11 +1347,7 @@ export const projects: Projects = {
     team: ["프론트엔드 1명,", "디자이너 1명,", "마케터 1명"],
     link: {
       title: "Related",
-      related: [
-        <a key="0" href="https://work.clovine.com" className="underline">
-          Clovine
-        </a>,
-      ],
+      related: [],
     },
   },
 };

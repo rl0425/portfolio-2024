@@ -31,4 +31,44 @@ export const SVGIcons = {
       </g>
     </svg>
   ),
+  imgPrev: (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g opacity="0.8">
+        <path
+          d="M8 18L2 12L8 6"
+          stroke="#ffffff"
+          stroke-opacity="0.8"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
+  ),
+  imgNext: (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g opacity="0.8">
+        <path
+          d="M16 6L22 12L16 18"
+          stroke="#ffffff"
+          stroke-opacity="0.8"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
+  ),
 } as const;

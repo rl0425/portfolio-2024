@@ -26,8 +26,10 @@ const STYLES = {
   imageWrapper: "flex gap-4 relative",
   imageItem:
     "border-[#rgb(34 34 34 / 17%)] relative flex-none border-solid first:ml-0",
-  arrowButton:
-    "hidden md:flex absolute top-1/2 -translate-y-1/2 items-center justify-center w-12 h-12 bg-black/30 rounded-full cursor-pointer hover:bg-black/50 transition-colors",
+  rightArrowButton:
+    "hidden md:flex absolute top-1/2 -translate-y-1/2 items-center justify-center w-12 h-12 bg-[#000000a3] pr-3 rounded-full cursor-pointer hover:bg-black/50 transition-colors",
+  leftArrowButton:
+    "hidden md:flex absolute top-1/2 -translate-y-1/2 items-center justify-center w-12 h-12 bg-[#000000a3] pl-3 rounded-full cursor-pointer hover:bg-black/50 transition-colors",
   mobileScroll: "scrollbar-hide overflow-x-auto md:overflow-x-hidden",
   pageIndicator:
     "absolute bottom-4 right-4 bg-black/30 px-3 py-1 rounded text-white text-sm",
@@ -212,18 +214,18 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
 
                 {/* 네비게이션 화살표 */}
                 <button
-                  className={`${STYLES.arrowButton} left-4`}
+                  className={`${STYLES.leftArrowButton} left-4`}
                   onClick={handlePrevSlide}
                   aria-label="이전 이미지"
                 >
-                  <Icon name="prev" className="h-6 w-6 text-white" />
+                  <Icon name="imgPrev" className="h-6 w-6 text-white" />
                 </button>
                 <button
-                  className={`${STYLES.arrowButton} right-4`}
+                  className={`${STYLES.rightArrowButton} right-4`}
                   onClick={handleNextSlide}
                   aria-label="다음 이미지"
                 >
-                  <Icon name="next" className="h-6 w-6 text-white" />
+                  <Icon name="imgNext" className="h-6 w-6 text-white" />
                 </button>
 
                 {/* 페이지 인디케이터 */}
@@ -300,31 +302,33 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
               </div>
             </div>
 
-            <div className="mt-10 px-5">
-              <h3 className="mb-4 text-[16px] font-bold text-[#222222] underline md:text-[18px]">
-                Features And Page{" "}
-              </h3>
-              {project.feature.map((feature, index) => (
-                <div key={index} className="mb-2 mt-1 flex flex-col">
-                  <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229] md:text-[14px]">
-                    {feature.title}
-                  </h4>
-                  <div className="mb-2 ml-3 mt-1">
-                    {feature.items.map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="align-center flex items-start gap-2"
-                      >
-                        <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
-                        <p className="text-[12px] font-normal leading-[25px] md:text-[14px]">
-                          {item}
-                        </p>
-                      </div>
-                    ))}
+            {project?.feature?.length > 0 && (
+              <div className="mt-10 px-5">
+                <h3 className="mb-4 text-[16px] font-bold text-[#222222] underline md:text-[18px]">
+                  Features And Page{" "}
+                </h3>
+                {project.feature.map((feature, index) => (
+                  <div key={index} className="mb-2 mt-1 flex flex-col">
+                    <h4 className="w-fit px-[2px] text-[12px] font-extrabold text-[#2229] md:text-[14px]">
+                      {feature.title}
+                    </h4>
+                    <div className="mb-2 ml-3 mt-1">
+                      {feature.items.map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="align-center flex items-start gap-2"
+                        >
+                          <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
+                          <p className="text-[12px] font-normal leading-[25px] md:text-[14px]">
+                            {item}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             <div className="mt-5 px-5">
               <h3 className="text-[16px] font-bold text-[#222222] underline md:text-[18px]">
@@ -339,18 +343,20 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
               </div>
             </div>
 
-            <div className="mt-6 px-5">
-              <h3 className="text-[16px] font-bold text-[#222222] underline md:text-[18px]">
-                Related
-              </h3>
-              <div className="mt-1 flex flex-wrap gap-1">
-                {project.link.related.map((item, index) => (
-                  <span className="text-[12px] md:text-[14px]" key={index}>
-                    {item}
-                  </span>
-                ))}
+            {project?.link?.related.length > 0 && (
+              <div className="mt-6 px-5">
+                <h3 className="text-[16px] font-bold text-[#222222] underline md:text-[18px]">
+                  Related
+                </h3>
+                <div className="mt-1 flex flex-wrap gap-1">
+                  {project.link.related.map((item, index) => (
+                    <span className="text-[12px] md:text-[14px]" key={index}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
