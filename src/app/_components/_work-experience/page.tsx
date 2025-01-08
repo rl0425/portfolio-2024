@@ -182,6 +182,74 @@ export default function WorkExperience() {
                   </li>
                 </ul>
               </div>
+
+              <div className="mt-6">
+                <p className="flex items-center gap-2 text-[14px]">
+                  <span className="font-semibold">멘토링</span>
+                  <span className="text-[12px] font-normal text-[#777676] md:text-[14px]">
+                    2024년 8월 ~ 2024년 9월
+                  </span>
+                </p>
+                <p className="text-[14px] font-medium md:text-[14px]">
+                  [유데미 x 스나이퍼팩토리] Next.js 프로젝트 캠프 2기 리드 멘토
+                </p>
+                <h3 className={STYLES.DETAIL_TITLE}>프론트엔드 개발</h3>
+              </div>
+              <div className="h-[1px] w-full bg-[#2222223b]"></div>
+
+              <p className="flex flex-col gap-1 text-[14px] md:text-[14px]">
+                <h4 className={STYLES.SUB_TITLE}>주요 역할 및 성과</h4>
+                <ul className="list-none">
+                  <li className={STYLES.LIST_ITEM}>
+                    • Next.js 기반의 실전 프로젝트 캠프에서 3개 팀 동시 리드
+                    멘토링 수행
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • 팀별 프로젝트 기획부터 배포까지 전 과정 기술 지도
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • 총 12명의 교육생 중 1명의 우수 수료생 배출
+                  </li>
+                </ul>
+                <h4 className={STYLES.SUB_TITLE}>프로젝트 기획 및 설계</h4>
+                <ul className="list-none">
+                  <li className={STYLES.LIST_ITEM}>
+                    • 요구사항 분석 및 기술 스택 선정 지도
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • 프로젝트 아키텍처 설계 멘토링
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • Git 기반 협업 워크플로우 구축
+                  </li>
+                </ul>
+                <h4 className={STYLES.SUB_TITLE}>기술 지도</h4>
+                <ul className="list-none">
+                  <li className={STYLES.LIST_ITEM}>
+                    • Next.js 13 App Router 실전 활용
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • TypeScript 기반 컴포넌트 설계
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • 상태관리 및 데이터 페칭 전략 수립
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • CI/CD 파이프라인 구축 지원
+                  </li>
+                </ul>
+                <h4 className={STYLES.SUB_TITLE}>프로젝트 관리</h4>
+                <ul className="list-none">
+                  <li className={STYLES.LIST_ITEM}>• 주간 코드 리뷰 진행</li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • 팀별 기술적 난제 해결 지원
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • 프로젝트 일정 및 품질 관리
+                  </li>
+                </ul>
+              </p>
+              <div className="h-[1px] w-full bg-[#2222223b]"></div>
             </div>
           </section>
         </main>

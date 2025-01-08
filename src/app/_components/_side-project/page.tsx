@@ -14,7 +14,7 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     id: 1,
-    imageUrl: "/images/pawwise/image.png",
+    imageUrl: "/images/pawwise/pawwise_2.png",
     title: "PawWise",
     url: "pawwise",
   },
@@ -277,7 +277,7 @@ export default function SideProject() {
                   <div
                     className="relative h-full w-full cursor-pointer"
                     onClick={() =>
-                      router.push(`/projects?projectName=${PROJECTS[2].url}`)
+                      router.push(`/projects?projectName=${PROJECTS[1].url}`)
                     }
                   >
                     {isClient && (
@@ -298,7 +298,7 @@ export default function SideProject() {
                     )}
                     <div className={OVERLAY_STYLE}>
                       <p
-                        id={`title-${PROJECTS[2].id}`}
+                        id={`title-${PROJECTS[1].id}`}
                         className="title-shimmer text-center text-xl font-bold"
                         data-animate="false"
                       >
