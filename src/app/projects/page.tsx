@@ -7,20 +7,11 @@ import { Icon } from "@/components/icon/Icon";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-/**
- * 더보기 버튼 스타일 상수
- */
 const MORE_BUTTON_STYLE =
   "text-[12px] md:text-[14px] font-medium text-blue-500 mt-2 cursor-pointer hover:text-blue-600";
 
-/**
- * 설명 텍스트 최대 표시 줄 수
- */
 const MAX_VISIBLE_ITEMS = 3;
 
-/**
- * 스타일 상수
- */
 const STYLES = {
   imageContainer: "relative my-4 mb-1 md:px-5 md:h-[340px] w-full",
   imageWrapper: "flex gap-4 relative",
@@ -50,19 +41,15 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    // 초기 화면 크기 확인
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768);
       setIsExpanded(window.innerWidth >= 768);
     };
 
-    // 초기 실행
     checkScreenSize();
 
-    // 리사이즈 이벤트 리스너
     window.addEventListener("resize", checkScreenSize);
 
-    // 클린업
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
@@ -99,21 +86,18 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [handlePrevSlide, handleNextSlide, isMobile]);
 
-  // 모달 열기
   const handleImageClick = useCallback(() => {
     if (!isMobile) {
       setIsModalOpen(true);
-      document.body.style.overflow = "hidden"; // 배경 스크롤 방지
+      document.body.style.overflow = "hidden";
     }
   }, [isMobile]);
 
-  // 모달 닫기
   const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
-    document.body.style.overflow = ""; // 배경 스크롤 복구
+    document.body.style.overflow = "";
   }, []);
 
-  // ESC 키로 모달 닫기
   useEffect(() => {
     const handleEscKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") handleCloseModal();
@@ -142,7 +126,6 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
         </div>
       </div>
 
-      {/* 메인 컨텐츠 - 중앙 정렬 유지 */}
       <div className="flex w-full justify-center">
         <div className="w-full md:max-w-[600px]">
           <div className="mt-[60px]">
@@ -228,12 +211,10 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
                   <Icon name="imgNext" className="h-6 w-6 text-white" />
                 </button>
 
-                {/* 페이지 인디케이터 */}
                 <div className={STYLES.pageIndicator}>
                   {currentIndex + 1} / {project.image.images.length}
                 </div>
 
-                {/* 페이지네이션 닷 */}
                 <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
                   {project.image.images.map((_, index) => (
                     <button
@@ -361,7 +342,6 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
         </div>
       </div>
 
-      {/* 전체화면 모달 */}
       {isModalOpen && (
         <div className={STYLES.modal} onClick={handleCloseModal}>
           <button
