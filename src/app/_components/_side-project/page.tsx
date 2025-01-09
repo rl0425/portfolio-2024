@@ -234,18 +234,13 @@ export default function SideProject() {
                     className={`${IMAGE_CONTAINER_STYLE} overflow-hidden`}
                   >
                     <div
-                      className="relative h-full w-full cursor-pointer"
+                      className="group relative h-full w-full cursor-pointer"
                       onClick={() =>
                         router.push(`/projects?projectName=${project.url}`)
                       }
                     >
                       {isClient && (
-                        <div
-                          className="absolute inset-0"
-                          style={{
-                            animation: `pcFloat${(index % 2) + 1} ${5 + index}s ease-in-out infinite`,
-                          }}
-                        >
+                        <div className="relative h-full w-full">
                           <Image
                             src={project.imageUrl}
                             alt={project.title}
@@ -254,17 +249,16 @@ export default function SideProject() {
                             sizes="25vw"
                             priority
                           />
+                          <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
+                            <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                              {project.title}
+                            </h3>
+                            <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                              Live Streaming Service
+                            </p>
+                          </div>
                         </div>
                       )}
-                      <div className={OVERLAY_STYLE}>
-                        <p
-                          id={`title-${project.id}`}
-                          className="title-shimmer text-center text-xl font-bold"
-                          data-animate="false"
-                        >
-                          {project.title}
-                        </p>
-                      </div>
                     </div>
                   </div>
                 ))}
@@ -275,36 +269,33 @@ export default function SideProject() {
                   className={`${IMAGE_CONTAINER_STYLE} h-full overflow-hidden`}
                 >
                   <div
-                    className="relative h-full w-full cursor-pointer"
+                    className="group relative h-full w-full cursor-pointer"
                     onClick={() =>
                       router.push(`/projects?projectName=${PROJECTS[1].url}`)
                     }
                   >
                     {isClient && (
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          animation: `pcFloat2 4.5s ease-in-out infinite`,
-                        }}
-                      >
+                      <div className="relative h-full w-full">
                         <Image
                           src={PROJECTS[1].imageUrl}
                           alt={PROJECTS[1].title}
                           fill
                           className="object-cover"
                           sizes="50vw"
+                          style={{
+                            animation: `pcFloat2 4.5s ease-in-out infinite`,
+                          }}
                         />
+                        <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
+                          <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                            {PROJECTS[1].title}
+                          </h3>
+                          <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                            Live Streaming Service
+                          </p>
+                        </div>
                       </div>
                     )}
-                    <div className={OVERLAY_STYLE}>
-                      <p
-                        id={`title-${PROJECTS[1].id}`}
-                        className="title-shimmer text-center text-xl font-bold"
-                        data-animate="false"
-                      >
-                        {PROJECTS[1].title}
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -314,18 +305,13 @@ export default function SideProject() {
                 className={`${IMAGE_CONTAINER_STYLE} h-full overflow-hidden`}
               >
                 <div
-                  className="relative h-full w-full cursor-pointer"
+                  className="group relative h-full w-full cursor-pointer"
                   onClick={() =>
                     router.push(`/projects?projectName=${PROJECTS[0].url}`)
                   }
                 >
                   {isClient && (
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        animation: `pcFloat1 4s ease-in-out infinite`,
-                      }}
-                    >
+                    <div className="absolute inset-0">
                       <Image
                         src={PROJECTS[0].imageUrl}
                         alt={PROJECTS[0].title}
@@ -334,17 +320,16 @@ export default function SideProject() {
                         sizes="50vw"
                         priority
                       />
+                      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
+                        <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                          {PROJECTS[0].title}
+                        </h3>
+                        <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                          Live Streaming Service
+                        </p>
+                      </div>
                     </div>
                   )}
-                  <div className={OVERLAY_STYLE}>
-                    <p
-                      id={`title-${PROJECTS[0].id}`}
-                      className="title-shimmer text-center text-xl font-bold"
-                      data-animate="false"
-                    >
-                      {PROJECTS[0].title}
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -377,7 +362,7 @@ export default function SideProject() {
       <div className="mx-auto bg-white">
         <div className="h-full w-full pt-6">
           <section className="mb-2 px-5">
-            <h2 className="mb-3 text-[24px] font-bold">MAIN PROJECT.</h2>
+            <h2 className="mb-3 text-[24px] font-bold">SIDE PROJECTS.</h2>
           </section>
           <div className="bg-white md:px-5">{renderProjects}</div>
         </div>
