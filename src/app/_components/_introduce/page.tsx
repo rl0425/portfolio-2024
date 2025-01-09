@@ -13,8 +13,8 @@ const STYLES = {
   INNER: "mx-auto bg-white",
   MAIN: "h-full w-full pt-6",
   SECTION: "mb-4",
-  HEADING: "mb-1 text-[24px] font-bold",
-  CONTENT: "flex flex-col gap-1 text-[14px] md:text-[14px] font-semibold",
+  HEADING: "mb-1 text-[24px] md:text-[26px] font-bold md:font-extrabold",
+  CONTENT: "flex flex-col gap-1 text-[14px] md:text-[15px] font-semibold",
   BUTTON:
     "(mt-4 text-[12px] md:text-[12px] font-medium) (text-blue-500 hover:text-blue-600) (transition-colors duration-200)",
 } as const;
@@ -130,7 +130,7 @@ export default function Introduce() {
             <div className={STYLES.CONTENT}>
               {visibleSections.map((section) => (
                 <div
-                  className="text-[13px] font-normal leading-[1.9] text-[#222222ba] md:text-[14px]"
+                  className="text-[13px] font-normal leading-[1.9] text-[#222222ba] md:text-[15px]"
                   key={section.id}
                 >
                   {section.content}
