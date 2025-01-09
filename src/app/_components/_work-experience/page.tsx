@@ -125,8 +125,8 @@ export default function WorkExperience() {
                     시스템 구축
                   </li>
                   <li className={STYLES.LIST_ITEM}>
-                    • 사용자 인원별 페이지네이션 및 지연 로딩 구현으로 렌더링
-                    성능 최적화 달성
+                    • 지연 로딩 및 컴포넌트 최적화로 초기 로딩 속도 향상 및
+                    대규모 인원 접속 안정성 확보
                   </li>
                   <li className={STYLES.LIST_ITEM}>
                     • 화면 공유, 강의 영상 재생, 실시간 채팅, 소그룹 라이브 등
@@ -137,15 +137,20 @@ export default function WorkExperience() {
                 <h4 className={STYLES.SUB_TITLE}>개발 프로세스 개선</h4>
                 <ul className="mb-2 list-none">
                   <li className={STYLES.LIST_ITEM}>
-                    • 재사용 가능한 UI 컴포넌트 라이브러리 구축으로 개발 생산성
-                    200% 향상
+                    • Webpack 빌드 최적화 및 코드 스플리팅으로 초기 로딩 시간
+                    대폭 단축
                   </li>
                   <li className={STYLES.LIST_ITEM}>
-                    • TypeScript 도입 및 코드 컨벤션 정립으로 코드 품질 및
-                    유지보수성 강화
+                    • TypeScript 도입 및 코드 품질 개선을 위한 컨벤션 수립 및
+                    재사용 가능한 UI 컴포넌트 라이브러리 구축
                   </li>
                   <li className={STYLES.LIST_ITEM}>
-                    • 성능 모니터링 시스템 구축으로 실시간 서비스 안정성 확보
+                    • TypeScript와 Next.js 기반 프로젝트 구조 재설계 및 코드
+                    마이그레이션 주도
+                  </li>
+                  <li className={STYLES.LIST_ITEM}>
+                    • Recoil/Redux 기반 전역 상태 관리 아키텍처 설계 및 성능
+                    최적화
                   </li>
                 </ul>
 
