@@ -242,7 +242,7 @@ export default function WorkExperience() {
               </div>
               <div className={STYLES.DIVIDER}></div>
 
-              <p className={STYLES.CONTENT_CONTAINER}>
+              <div className={STYLES.CONTENT_CONTAINER}>
                 <h4 className={STYLES.SUB_TITLE}>주요 역할 및 성과</h4>
                 <ul className="list-none">
                   <li className={STYLES.LIST_ITEM}>
@@ -319,7 +319,7 @@ export default function WorkExperience() {
                     팀워크를 증진
                   </li>
                 </ul>
-              </p>
+              </div>
               <div className={STYLES.DIVIDER}></div>
             </div>
           </section>

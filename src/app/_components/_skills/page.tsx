@@ -70,7 +70,7 @@ const SKILLS_DATA = {
   },
   additional: {
     title: "Additional Technologies",
-    skills: ["OpenAI", "DHTMLX", "Chart.js", "i18n"],
+    skills: ["OpenAI", "DHTMLX", "Chart.js", "Agora RTC"],
   },
 } as const;
 
