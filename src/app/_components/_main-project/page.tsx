@@ -8,6 +8,7 @@ interface ProjectItem {
   id: number;
   imageUrl: string;
   title: string;
+  description: string;
   url: string;
 }
 
@@ -16,30 +17,35 @@ const PROJECTS: ProjectItem[] = [
     id: 1,
     imageUrl: "/images/live/live_2.png",
     title: "LIVE",
+    description: "Live Streaming Service",
     url: "live_service",
   },
   {
     id: 2,
     imageUrl: "/images/gantt/gantt_5.gif",
     title: "Gantt",
+    description: "Project Gantt Chart Tool",
     url: "gantt_chart",
   },
   {
     id: 3,
     imageUrl: "/images/enterprise/enterprise_1.png",
     title: "Enterprise",
+    description: "Enterprise Model",
     url: "enterprise_model",
   },
   {
     id: 4,
     imageUrl: "/images/summary/summary_2.gif",
     title: "Summary",
+    description: "Project Summary Tool",
     url: "project_summary",
   },
   {
     id: 5,
     imageUrl: "/images/evaluation/evaluation_2.gif",
     title: "Evaluation",
+    description: "Project Evaluation Tool",
     url: "project_evaluation",
   },
 ];
@@ -257,7 +263,7 @@ export default function SideProject() {
                           {PROJECTS[0].title}
                         </h3>
                         <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                          Live Streaming Service
+                          {PROJECTS[0].description}
                         </p>
                       </div>
                     </div>
@@ -293,7 +299,7 @@ export default function SideProject() {
                               {project.title}
                             </h3>
                             <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                              Live Streaming Service
+                              {project.description}
                             </p>
                           </div>
                         </div>
@@ -330,7 +336,7 @@ export default function SideProject() {
                             {PROJECTS[2].title}
                           </h3>
                           <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                            Live Streaming Service
+                            {PROJECTS[2].description}
                           </p>
                         </div>
                       </div>
@@ -363,7 +369,7 @@ export default function SideProject() {
                         {PROJECTS[1].title}
                       </h3>
                       <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                        Live Streaming Service
+                        {PROJECTS[1].description}
                       </p>
                     </div>
                   </div>
