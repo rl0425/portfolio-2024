@@ -8,6 +8,7 @@ interface ProjectItem {
   id: number;
   imageUrl: string;
   title: string;
+  description: string;
   url: string;
 }
 
@@ -16,24 +17,28 @@ const PROJECTS: ProjectItem[] = [
     id: 1,
     imageUrl: "/images/pawwise/pawwise_2.png",
     title: "PawWise",
+    description: "Pet Care Service",
     url: "pawwise",
   },
   {
     id: 2,
     imageUrl: "/images/deats/deats_1.png",
     title: "DEATS",
+    description: "Map app aiding low-income youth",
     url: "deats",
   },
   {
     id: 3,
     imageUrl: "/images/qdrop/qdrop_1.png",
     title: "Qdrop",
+    description: "Board app for interview question sharing",
     url: "qdrop",
   },
   {
     id: 4,
     imageUrl: "/images/fotscore/fotscore_4.gif",
     title: "FOTSCORE",
+    description: "Football results, schedules, and rankings",
     url: "fotscore",
   },
 ];
@@ -103,7 +108,7 @@ const OVERLAY_STYLE =
   "absolute inset-0 bg-[#00000038] flex items-center justify-center transition-opacity duration-300";
 
 const GRID_LAYOUT_STYLES = {
-  container: "grid grid-cols-2 gap-3 h-[400px] min-w-full",
+  container: "grid grid-cols-2 gap-3 h-[430px] min-w-full",
   leftSection: "relative h-full",
   rightSection: "grid grid-rows-2 gap-3",
   bottomSection: "relative h-[200px] mt-2",
@@ -254,7 +259,7 @@ export default function SideProject() {
                               {project.title}
                             </h3>
                             <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                              Live Streaming Service
+                              {project.description}
                             </p>
                           </div>
                         </div>
@@ -291,7 +296,7 @@ export default function SideProject() {
                             {PROJECTS[1].title}
                           </h3>
                           <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                            Live Streaming Service
+                            {PROJECTS[1].description}
                           </p>
                         </div>
                       </div>
@@ -325,7 +330,7 @@ export default function SideProject() {
                           {PROJECTS[0].title}
                         </h3>
                         <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                          Live Streaming Service
+                          {PROJECTS[0].description}
                         </p>
                       </div>
                     </div>
