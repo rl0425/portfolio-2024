@@ -23,10 +23,10 @@ export const SVGIcons = {
         <path
           d="M8 18L2 12L8 6"
           stroke="#222222"
-          stroke-opacity="0.8"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeOpacity="0.8"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
@@ -43,10 +43,10 @@ export const SVGIcons = {
         <path
           d="M8 18L2 12L8 6"
           stroke="#ffffff"
-          stroke-opacity="0.8"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeOpacity="0.8"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
@@ -63,10 +63,10 @@ export const SVGIcons = {
         <path
           d="M16 6L22 12L16 18"
           stroke="#ffffff"
-          stroke-opacity="0.8"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeOpacity="0.8"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
