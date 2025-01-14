@@ -45,8 +45,8 @@ export default function WorkExperience() {
                   </span>
                 </p>
                 <p className={STYLES.COMPANY_DESC}>
-                  프로젝트 관리 솔루션에서 포트폴리오까지 통합적인 관리를 할 수
-                  있는 프로그램 클로바인(Clovine)을 개발하는 IT 솔루션 기업
+                  프로젝트 관리 솔루션부터 포트폴리오까지 통합 관리가 가능한
+                  클로바인(Clovine) 서비스 개발
                 </p>
                 <h3 className={STYLES.DETAIL_TITLE}>프론트엔드/백엔드 개발</h3>
               </div>
@@ -54,28 +54,31 @@ export default function WorkExperience() {
               <div>
                 <div className={STYLES.CONTAINER}>
                   <h4 className={STYLES.SUB_TITLE}>
-                    Clovine의 통합형 프로젝트 관리 프로그램(PPM) 개발
+                    통합형 프로젝트 관리 프로그램(PPM) 기능 개발
                   </h4>
                   <ul className="mb-2 list-none">
                     <li className={STYLES.LIST_ITEM}>
-                      • DHTMLX 라이브러리 기반의 간트차트를 커스터마이징하여
-                      태스크, 마일스톤, 일정 그래픽 차트 및 실시간 수정 기능을
-                      성공적으로 개발, 사용자 경험을 개선
+                      • DHTMLX Gantt 라이브러리 커스터마이징을 통한 자사
+                      PPM(프로젝트 포트폴리오 관리) 시스템에 최적화된 간트차트
+                      서비스 개발
                     </li>
                     <li className={STYLES.LIST_ITEM}>
                       • 프로젝트 생성, 작업 등록/관리, 팀원 할당, 진척도 추적 등
-                      핵심 PPM 기능을 구현하여 API 통신 속도를 300% 향상시키고
-                      시스템 반응성을 극대화
+                      PPM 핵심 기능 구현으로 웹페이지 방문자 수(PV) 200% 증가
+                      달성
                     </li>
                     <li className={STYLES.LIST_ITEM}>
-                      • 프로젝트 개요, 평가, 생성 페이지의 설계 및 구현을 통해
-                      웹페이지 방문자 수(PV)를 200% 증가시켜 비즈니스 성과를
-                      창출
+                      • 트리 구조 기반 조직도 시스템, 사용자 권한 기반 접근 제어
+                      시스템 등 다양한 산업군에서 사용 가능한 관리기능 개발
                     </li>
                     <li className={STYLES.LIST_ITEM}>
                       • 엔터프라이즈 고객을 위한 트리 뷰 조직도, 워크스페이스
-                      간트차트, 사업 분야 리스트 등 맞춤형 기능을 개발하여 고객
-                      만족도를 높임
+                      간트차트, 사업 분야 리스트 등 맞춤형 기능 개발로 140개
+                      이상의 고객사 확보에 기여
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      RESTful API 설계 및 통신 최적화, 재사용 가능한 공통 함수
+                      개발 및 비즈니스 로직 모듈화
                     </li>
                   </ul>
                   <h4 className={STYLES.SUB_TITLE}>
@@ -84,36 +87,33 @@ export default function WorkExperience() {
                   <ul className="list-none">
                     <li className={STYLES.LIST_ITEM}>
                       • 데이터베이스 테이블 정의서 및 함수 기능 명세서를
-                      작성하여 유지보수성을 향상시키고, 팀 내 지식 공유를 촉진
+                      작성하여 유지보수성향상 및 팀 내 지식 공유 촉진
                     </li>
                     <li className={STYLES.LIST_ITEM}>
-                      • 프로젝트 관리 및 협업을 위한 공통 컴포넌트와 UI
-                      가이드라인을 문서화하여 개발 표준을 수립
+                      • 프로젝트 관리를 위한 공통 함수와 UI 가이드라인을
+                      문서화하여 개발 표준을 수립
                     </li>
                     <li className={STYLES.LIST_ITEM}>
-                      • Git 브랜치 전략을 수립하고 코드 리뷰 프로세스를 구축하여
-                      팀 협업의 효율성을 40% 증가
+                      • Git Flow 전략 도입 및 코드 리뷰 프로세스 구축으로 배포
+                      안정성과 코드 품질 향상
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      MongoDB 인덱싱 및 데이터 캐싱 전략 도입으로 API 응답 속도
+                      200% 개선
                     </li>
                   </ul>
                   <h4 className={STYLES.SUB_TITLE}>성과 및 기여</h4>
                   <ul className="mb-2 list-none">
                     <li className={STYLES.LIST_ITEM}>
-                      • 해당 프로젝트를 통해 100억 원 규모의 투자 유치 및 140개
-                      이상의 고객사 확보에 기여하여 회사의 성장 발판 마련
+                      • 시드 단계에서 시리즈 A 100억 원 규모 투자 유치 과정의
+                      핵심 서비스 개발 주도
                     </li>
                     <li className={STYLES.LIST_ITEM}>
-                      • PM을 맡은 프로젝트에서 창업진흥원 소속 다수 기업의
-                      접근성과 실사용률을 확보하여 실질적인 비즈니스 성과를 달성
+                      • 창업진흥원 산하 100여 개 기업 대상 엔터프라이즈 솔루션
+                      구축으로 140개 이상의 고객사 확보
                     </li>
                     <li className={STYLES.LIST_ITEM}>
-                      • 함수 모듈화와 재사용 가능한 컴포넌트 설계를 통해 개발
-                      생산성을 향상시키고, 유지보수성을 강화하여 팀의 작업
-                      효율성을 극대화
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      정기적인 사용자 피드백 세션을 통해 제품 개선 방향성을
-                      도출하고, 이를 기반으로 한 기능 업데이트로 고객의 요구를
-                      반영
+                      • 서비스 개선을 통한 전체 페이지뷰(PV) 200% 증가 달성
                     </li>
                   </ul>
                 </div>
