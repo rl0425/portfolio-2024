@@ -207,7 +207,7 @@ export default function WorkExperience() {
                     증가를 달성하여 플랫폼의 가치 증대에 기여
                   </li>
                   <li className={STYLES.LIST_ITEM}>
-                    • 화상 통화 기능 도입에 따른 사용자 체류 시간 평균 45%
+                    • 화상 통화 기능 도입에 따른 사용자 체류 시간 평균 50%
                     향상을 이끌어내어 사용자 참여도를 높임
                   </li>
                   <li className={STYLES.LIST_ITEM}>
