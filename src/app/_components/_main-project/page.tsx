@@ -15,7 +15,7 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     id: 1,
-    imageUrl: "/images/live/live_2.png",
+    imageUrl: "/images/live/live_20.png",
     title: "LIVE",
     description: "Live Streaming Service",
     url: "live_service",
