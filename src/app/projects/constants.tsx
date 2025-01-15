@@ -453,7 +453,6 @@ export const projects: Projects = {
     description: [
       {
         title: "기획 및 개발",
-        title: "기획 및 개발",
         description: [
           <p key="0">
             <span className="font-semibold">
