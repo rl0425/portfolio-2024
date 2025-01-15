@@ -53,7 +53,7 @@ const SKILLS_DATA = {
   },
   deployment: {
     title: "Deployment & Monitoring",
-    skills: ["Vercel", "Sentry", "Google Analytics"],
+    skills: ["AWS S3", "Vercel", "Sentry", "Google Analytics"],
   },
   tools: {
     title: "Development Tools",
