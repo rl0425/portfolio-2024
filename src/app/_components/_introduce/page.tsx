@@ -23,19 +23,20 @@ const INITIAL_VISIBLE_SECTIONS = 2;
 
 export default function Introduce() {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
     const handleResize = () => {
-      setIsExpanded(window.innerWidth >= 768);
+      const width = window.innerWidth;
+      setWindowWidth(width);
+      setIsExpanded(width >= 768);
     };
 
     handleResize();
-
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleToggleExpand = useCallback(() => {
@@ -93,12 +94,12 @@ export default function Introduce() {
 
   const visibleSections = useMemo(
     () =>
-      window.innerWidth >= 768
+      windowWidth >= 768
         ? sections
         : isExpanded
           ? sections
           : sections.slice(0, INITIAL_VISIBLE_SECTIONS),
-    [sections, isExpanded],
+    [sections, isExpanded, windowWidth],
   );
 
   return (
@@ -120,7 +121,7 @@ export default function Introduce() {
                 </div>
               ))}
 
-              {window.innerWidth < 768 &&
+              {windowWidth < 768 &&
                 sections.length > INITIAL_VISIBLE_SECTIONS && (
                   <div
                     onClick={handleToggleExpand}

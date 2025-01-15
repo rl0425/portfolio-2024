@@ -233,7 +233,7 @@ export default function SideProject() {
           <div className={GRID_LAYOUT_STYLES.container}>
             <div className={GRID_LAYOUT_STYLES.rightSection}>
               <div className={GRID_LAYOUT_STYLES.rightTop}>
-                {PROJECTS.slice(2, 4).map((project, index) => (
+                {PROJECTS.slice(2, 4).map((project) => (
                   <div
                     key={project.id}
                     className={`${IMAGE_CONTAINER_STYLE} overflow-hidden`}
