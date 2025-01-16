@@ -1,17 +1,12 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
-import liveImg from "../../../../public/images/live/live_2.png";
-import ganttImg from "../../../../public/images/gantt/gantt_5.gif";
-import enterpriseImg from "../../../../public/images/enterprise/enterprise_2.png";
-import summaryImg from "../../../../public/images/summary/summary_2.gif";
-import evaluationImg from "../../../../public/images/evaluation/evaluation_2.gif";
 
 interface ProjectItem {
   id: number;
-  imageUrl: StaticImageData;
+  imageUrl: string;
   title: string;
   description: string;
   url: string;
@@ -20,35 +15,35 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     id: 1,
-    imageUrl: liveImg,
+    imageUrl: "/images/live/live_2.png",
     title: "LIVE",
     description: "Live Streaming Service",
     url: "live_service",
   },
   {
     id: 2,
-    imageUrl: ganttImg,
+    imageUrl: "/images/gantt/gantt_5.gif",
     title: "Gantt",
     description: "Project Gantt Chart Tool",
     url: "gantt_chart",
   },
   {
     id: 3,
-    imageUrl: enterpriseImg,
+    imageUrl: "/images/enterprise/enterprise_1.png",
     title: "Enterprise",
     description: "Enterprise Model",
     url: "enterprise_model",
   },
   {
     id: 4,
-    imageUrl: summaryImg,
+    imageUrl: "/images/summary/summary_2.gif",
     title: "Summary",
     description: "Project Summary Tool",
     url: "project_summary",
   },
   {
     id: 5,
-    imageUrl: evaluationImg,
+    imageUrl: "/images/evaluation/evaluation_2.gif",
     title: "Evaluation",
     description: "Project Evaluation Tool",
     url: "project_evaluation",
@@ -208,26 +203,24 @@ export default function SideProject() {
               }
             >
               <div className="relative h-[360px] w-full">
-                {isClient && (
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      animation: `float${(index % 2) + 1} ${
-                        6 + index * 1.5
-                      }s ease-in-out infinite`,
-                    }}
-                  >
-                    <Image
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className="object-cover"
-                      fill
-                      quality={60}
-                      loading="eager"
-                      priority={project.id <= 2}
-                    />
-                  </div>
-                )}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    animation: `float${(index % 2) + 1} ${
+                      6 + index * 1.5
+                    }s ease-in-out infinite`,
+                  }}
+                >
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="object-cover"
+                    fill
+                    quality={60}
+                    loading="eager"
+                    priority={project.id <= 2}
+                  />
+                </div>
                 <div className={OVERLAY_STYLE}>
                   <p
                     id={`title-${project.id}`}
@@ -254,27 +247,25 @@ export default function SideProject() {
                     router.push(`/projects?projectName=${PROJECTS[0].url}`)
                   }
                 >
-                  {isClient && (
-                    <div className="absolute inset-0">
-                      <Image
-                        src={PROJECTS[0].imageUrl}
-                        alt={PROJECTS[0].title}
-                        fill
-                        quality={60}
-                        loading="eager"
-                        className="object-cover"
-                        priority
-                      />
-                      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
-                        <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                          {PROJECTS[0].title}
-                        </h3>
-                        <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                          {PROJECTS[0].description}
-                        </p>
-                      </div>
+                  <div className="absolute inset-0">
+                    <Image
+                      src={PROJECTS[0].imageUrl}
+                      alt={PROJECTS[0].title}
+                      fill
+                      quality={60}
+                      loading="eager"
+                      className="object-cover"
+                      priority
+                    />
+                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
+                      <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                        {PROJECTS[0].title}
+                      </h3>
+                      <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                        {PROJECTS[0].description}
+                      </p>
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -291,27 +282,25 @@ export default function SideProject() {
                         router.push(`/projects?projectName=${project.url}`)
                       }
                     >
-                      {isClient && (
-                        <div className="relative h-full w-full">
-                          <Image
-                            src={project.imageUrl}
-                            alt={project.title}
-                            fill
-                            quality={60}
-                            loading="eager"
-                            className="object-cover"
-                            priority
-                          />
-                          <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
-                            <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                              {project.title}
-                            </h3>
-                            <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                              {project.description}
-                            </p>
-                          </div>
+                      <div className="relative h-full w-full">
+                        <Image
+                          src={project.imageUrl}
+                          alt={project.title}
+                          fill
+                          quality={60}
+                          loading="eager"
+                          className="object-cover"
+                          priority
+                        />
+                        <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
+                          <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                            {project.title}
+                          </h3>
+                          <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                            {project.description}
+                          </p>
                         </div>
-                      )}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -327,30 +316,28 @@ export default function SideProject() {
                       router.push(`/projects?projectName=${PROJECTS[1].url}`)
                     }
                   >
-                    {isClient && (
-                      <div className="relative h-full w-full">
-                        <Image
-                          src={PROJECTS[2].imageUrl}
-                          alt={PROJECTS[2].title}
-                          fill
-                          quality={60}
-                          loading="eager"
-                          className="object-cover"
-                          priority
-                          style={{
-                            animation: `pcFloat2 4.5s ease-in-out infinite`,
-                          }}
-                        />
-                        <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
-                          <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                            {PROJECTS[2].title}
-                          </h3>
-                          <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                            {PROJECTS[2].description}
-                          </p>
-                        </div>
+                    <div className="relative h-full w-full">
+                      <Image
+                        src={PROJECTS[2].imageUrl}
+                        alt={PROJECTS[2].title}
+                        fill
+                        quality={60}
+                        loading="eager"
+                        className="object-cover"
+                        priority
+                        style={{
+                          animation: `pcFloat2 4.5s ease-in-out infinite`,
+                        }}
+                      />
+                      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
+                        <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                          {PROJECTS[2].title}
+                        </h3>
+                        <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                          {PROJECTS[2].description}
+                        </p>
                       </div>
-                    )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -364,34 +351,32 @@ export default function SideProject() {
                   router.push(`/projects?projectName=${PROJECTS[0].url}`)
                 }
               >
-                {isClient && (
-                  <div className="absolute inset-0">
-                    <Image
-                      src={PROJECTS[1].imageUrl}
-                      alt={PROJECTS[1].title}
-                      fill
-                      quality={60}
-                      loading="eager"
-                      className="object-cover"
-                      priority
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
-                      <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                        {PROJECTS[1].title}
-                      </h3>
-                      <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                        {PROJECTS[1].description}
-                      </p>
-                    </div>
+                <div className="absolute inset-0">
+                  <Image
+                    src={PROJECTS[1].imageUrl}
+                    alt={PROJECTS[1].title}
+                    fill
+                    quality={60}
+                    loading="eager"
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
+                    <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                      {PROJECTS[1].title}
+                    </h3>
+                    <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
+                      {PROJECTS[1].description}
+                    </p>
                   </div>
-                )}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </>
     ),
-    [isClient, router],
+    [router],
   );
 
   if (!isClient) {
