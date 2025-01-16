@@ -15,7 +15,7 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     id: 1,
-    imageUrl: "/images/live/live_20.png",
+    imageUrl: "/images/live/live_2.png",
     title: "LIVE",
     description: "Live Streaming Service",
     url: "live_service",
@@ -215,9 +215,10 @@ export default function SideProject() {
                     <Image
                       src={project.imageUrl}
                       alt={project.title}
-                      fill
                       className="object-cover"
-                      sizes="100vw"
+                      fill
+                      quality={60}
+                      loading="eager"
                       priority={project.id <= 2}
                     />
                   </div>
@@ -254,8 +255,9 @@ export default function SideProject() {
                         src={PROJECTS[0].imageUrl}
                         alt={PROJECTS[0].title}
                         fill
+                        quality={60}
+                        loading="eager"
                         className="object-cover"
-                        sizes="50vw"
                         priority
                       />
                       <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
@@ -273,7 +275,7 @@ export default function SideProject() {
             </div>
             <div className={GRID_LAYOUT_STYLES.rightSection}>
               <div className={GRID_LAYOUT_STYLES.rightTop}>
-                {PROJECTS.slice(3, 5).map((project) => (
+                {PROJECTS.slice(3, 5).map((project, index) => (
                   <div
                     key={project.id}
                     className={`${IMAGE_CONTAINER_STYLE} overflow-hidden`}
@@ -290,8 +292,9 @@ export default function SideProject() {
                             src={project.imageUrl}
                             alt={project.title}
                             fill
+                            quality={60}
+                            loading="eager"
                             className="object-cover"
-                            sizes="25vw"
                             priority
                           />
                           <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
@@ -316,7 +319,7 @@ export default function SideProject() {
                   <div
                     className="group relative h-full w-full cursor-pointer"
                     onClick={() =>
-                      router.push(`/projects?projectName=${PROJECTS[2].url}`)
+                      router.push(`/projects?projectName=${PROJECTS[1].url}`)
                     }
                   >
                     {isClient && (
@@ -325,8 +328,10 @@ export default function SideProject() {
                           src={PROJECTS[2].imageUrl}
                           alt={PROJECTS[2].title}
                           fill
+                          quality={60}
+                          loading="eager"
                           className="object-cover"
-                          sizes="50vw"
+                          priority
                           style={{
                             animation: `pcFloat2 4.5s ease-in-out infinite`,
                           }}
@@ -351,7 +356,7 @@ export default function SideProject() {
               <div
                 className="group relative h-full w-full cursor-pointer"
                 onClick={() =>
-                  router.push(`/projects?projectName=${PROJECTS[1].url}`)
+                  router.push(`/projects?projectName=${PROJECTS[0].url}`)
                 }
               >
                 {isClient && (
@@ -360,8 +365,9 @@ export default function SideProject() {
                       src={PROJECTS[1].imageUrl}
                       alt={PROJECTS[1].title}
                       fill
+                      quality={60}
+                      loading="eager"
                       className="object-cover"
-                      sizes="50vw"
                       priority
                     />
                     <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
