@@ -5,7 +5,7 @@ export const projects: Projects = {
     title: "LIVE SERVICE",
     date: "23.08 ~ 24.09",
     mainDescription: (
-      <p>
+      <div>
         <a
           href="https://docs.agora.io/en/video-calling/get-started/get-started-sdk"
           className="underline"
@@ -16,7 +16,7 @@ export const projects: Projects = {
         통합한 혁신적인 온라인 강의 플랫폼을 구축함. 프로젝트 완료 후 사용자
         만족도 90%, 월간 활성 사용자 수 10% 증가. 기존 시스템의 한계를 극복하고,
         사용자 친화적인 환경을 제공하여 교육의 질을 크게 향상한 프로젝트
-      </p>
+      </div>
     ),
     image: {
       type: "narrow",

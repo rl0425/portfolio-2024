@@ -133,9 +133,9 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
             <p className="px-5 text-[14px] font-medium text-gray-500 md:text-[16px]">
               {project.date}
             </p>
-            <p className="px-5 pt-2 text-[12px] leading-5 md:text-[14px]">
+            <div className="px-5 pt-2 text-[12px] leading-5 md:text-[14px]">
               {project.mainDescription}
-            </p>
+            </div>
             <div></div>
             <div className={STYLES.imageContainer}>
               {/* 모바일 뷰 */}
@@ -249,9 +249,9 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
                       className="align-center flex items-start gap-2"
                     >
                       <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
-                      <p className="text-[12px] font-normal leading-6 md:text-[14px] md:leading-6">
+                      <div className="text-[12px] font-normal leading-6 md:text-[14px] md:leading-6">
                         {item}
-                      </p>
+                      </div>
                     </div>
                   ))}
                   {isMobile && desc.description.length > MAX_VISIBLE_ITEMS && (
