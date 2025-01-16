@@ -210,8 +210,8 @@ export default function SideProject() {
                       alt={project.title}
                       fill
                       className="object-cover"
-                      sizes="100vw"
-                      priority={project.id <= 2}
+                      quality={60}
+                      loading="lazy"
                     />
                   </div>
                 )}
@@ -233,7 +233,7 @@ export default function SideProject() {
           <div className={GRID_LAYOUT_STYLES.container}>
             <div className={GRID_LAYOUT_STYLES.rightSection}>
               <div className={GRID_LAYOUT_STYLES.rightTop}>
-                {PROJECTS.slice(2, 4).map((project, index) => (
+                {PROJECTS.slice(2, 4).map((project) => (
                   <div
                     key={project.id}
                     className={`${IMAGE_CONTAINER_STYLE} overflow-hidden`}
@@ -251,8 +251,8 @@ export default function SideProject() {
                             alt={project.title}
                             fill
                             className="object-cover"
-                            sizes="25vw"
-                            priority
+                            quality={60}
+                            loading="lazy"
                           />
                           <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
                             <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
@@ -286,7 +286,8 @@ export default function SideProject() {
                           alt={PROJECTS[1].title}
                           fill
                           className="object-cover"
-                          sizes="50vw"
+                          quality={60}
+                          loading="lazy"
                           style={{
                             animation: `pcFloat2 4.5s ease-in-out infinite`,
                           }}
@@ -322,8 +323,8 @@ export default function SideProject() {
                         alt={PROJECTS[0].title}
                         fill
                         className="object-cover"
-                        sizes="50vw"
-                        priority
+                        quality={60}
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
                         <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
