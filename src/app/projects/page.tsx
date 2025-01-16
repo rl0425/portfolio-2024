@@ -156,8 +156,8 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
                         alt={`${project.title} Image ${index + 1}`}
                         fill
                         className="object-cover"
-                        sizes="80vw"
-                        priority={index === 0}
+                        quality={60}
+                        loading="lazy"
                       />
                     </div>
                   ))}
@@ -185,8 +185,8 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
                           alt={`${project.title} Image ${index + 1}`}
                           fill
                           className="object-contain"
-                          sizes="80vw"
-                          priority={index === 0}
+                          quality={60}
+                          loading="lazy"
                         />
                       </div>
                     </div>
@@ -367,8 +367,8 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
                       alt={`${project.title} Image ${index + 1}`}
                       fill
                       className="object-contain"
-                      sizes="100vw"
-                      priority
+                      quality={60}
+                      loading="lazy"
                     />
                   </div>
                 </div>

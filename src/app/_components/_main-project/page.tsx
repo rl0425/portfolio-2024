@@ -217,8 +217,7 @@ export default function SideProject() {
                     className="object-cover"
                     fill
                     quality={60}
-                    loading="eager"
-                    priority={project.id <= 2}
+                    loading="lazy"
                   />
                 </div>
                 <div className={OVERLAY_STYLE}>
@@ -253,9 +252,8 @@ export default function SideProject() {
                       alt={PROJECTS[0].title}
                       fill
                       quality={60}
-                      loading="eager"
+                      loading="lazy"
                       className="object-cover"
-                      priority
                     />
                     <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
                       <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
@@ -288,9 +286,8 @@ export default function SideProject() {
                           alt={project.title}
                           fill
                           quality={60}
-                          loading="eager"
+                          loading="lazy"
                           className="object-cover"
-                          priority
                         />
                         <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
                           <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
@@ -322,9 +319,8 @@ export default function SideProject() {
                         alt={PROJECTS[2].title}
                         fill
                         quality={60}
-                        loading="eager"
+                        loading="lazy"
                         className="object-cover"
-                        priority
                         style={{
                           animation: `pcFloat2 4.5s ease-in-out infinite`,
                         }}
@@ -357,9 +353,8 @@ export default function SideProject() {
                     alt={PROJECTS[1].title}
                     fill
                     quality={60}
-                    loading="eager"
+                    loading="lazy"
                     className="object-cover"
-                    priority
                   />
                   <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
                     <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
