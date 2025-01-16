@@ -1,6 +1,5 @@
 "use client";
-
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import { useRouter } from "next/navigation";
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 
@@ -207,19 +206,14 @@ export default function SideProject() {
                   <div
                     className="absolute inset-0"
                     style={{
-                      animation: `float${(index % 2) + 1} ${
-                        6 + index * 1.5
-                      }s ease-in-out infinite`,
+                      animation: `float${(index % 2) + 1} ${6 + index * 1.5}s ease-in-out infinite`,
                     }}
                   >
-                    <Image
+                    <img
                       src={project.imageUrl}
                       alt={project.title}
-                      className="object-cover"
-                      fill
-                      quality={60}
-                      loading="eager"
-                      priority={project.id <= 2}
+                      className="h-full w-full object-cover"
+                      loading={project.id <= 2 ? "eager" : "lazy"}
                     />
                   </div>
                 )}
@@ -251,14 +245,11 @@ export default function SideProject() {
                 >
                   {isClient && (
                     <div className="absolute inset-0">
-                      <Image
+                      <img
                         src={PROJECTS[0].imageUrl}
                         alt={PROJECTS[0].title}
-                        fill
-                        quality={60}
+                        className="h-full w-full object-cover"
                         loading="eager"
-                        className="object-cover"
-                        priority
                       />
                       <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
                         <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
@@ -273,6 +264,7 @@ export default function SideProject() {
                 </div>
               </div>
             </div>
+
             <div className={GRID_LAYOUT_STYLES.rightSection}>
               <div className={GRID_LAYOUT_STYLES.rightTop}>
                 {PROJECTS.slice(3, 5).map((project) => (
@@ -288,14 +280,11 @@ export default function SideProject() {
                     >
                       {isClient && (
                         <div className="relative h-full w-full">
-                          <Image
+                          <img
                             src={project.imageUrl}
                             alt={project.title}
-                            fill
-                            quality={60}
-                            loading="eager"
-                            className="object-cover"
-                            priority
+                            className="h-full w-full object-cover"
+                            loading="lazy"
                           />
                           <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
                             <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
@@ -319,19 +308,16 @@ export default function SideProject() {
                   <div
                     className="group relative h-full w-full cursor-pointer"
                     onClick={() =>
-                      router.push(`/projects?projectName=${PROJECTS[1].url}`)
+                      router.push(`/projects?projectName=${PROJECTS[2].url}`)
                     }
                   >
                     {isClient && (
                       <div className="relative h-full w-full">
-                        <Image
+                        <img
                           src={PROJECTS[2].imageUrl}
                           alt={PROJECTS[2].title}
-                          fill
-                          quality={60}
-                          loading="eager"
-                          className="object-cover"
-                          priority
+                          className="h-full w-full object-cover"
+                          loading="lazy"
                           style={{
                             animation: `pcFloat2 4.5s ease-in-out infinite`,
                           }}
@@ -348,38 +334,6 @@ export default function SideProject() {
                     )}
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className={GRID_LAYOUT_STYLES.bottomSection}>
-            <div className={`${IMAGE_CONTAINER_STYLE} h-full overflow-hidden`}>
-              <div
-                className="group relative h-full w-full cursor-pointer"
-                onClick={() =>
-                  router.push(`/projects?projectName=${PROJECTS[0].url}`)
-                }
-              >
-                {isClient && (
-                  <div className="absolute inset-0">
-                    <Image
-                      src={PROJECTS[1].imageUrl}
-                      alt={PROJECTS[1].title}
-                      fill
-                      quality={60}
-                      loading="eager"
-                      className="object-cover"
-                      priority
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent p-8">
-                      <h3 className="transform text-2xl font-medium text-white opacity-0 transition-all duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                        {PROJECTS[1].title}
-                      </h3>
-                      <p className="mt-2 transform text-sm text-white/80 opacity-0 transition-all delay-75 duration-500 group-hover:-translate-y-2 group-hover:opacity-100">
-                        {PROJECTS[1].description}
-                      </p>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>
