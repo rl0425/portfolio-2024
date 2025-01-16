@@ -298,7 +298,7 @@ const ProjectCard: React.FC<{ projectName: string | null }> = ({
                           className="align-center flex items-start gap-2"
                         >
                           <span className="mt-2.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#2229]" />
-                          <div className="text-[12px] font-normal leading-[25px] md:text-[14px]">
+                          <div className="text-[12px] font-normal leading-[25px] text-[#2229] md:text-[14px]">
                             {item}
                           </div>
                         </div>

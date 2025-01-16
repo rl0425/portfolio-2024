@@ -24,8 +24,6 @@ export const projects: Projects = {
         "/images/live/live_6.png",
         "/images/live/live_8.png",
         "/images/live/live_9.png",
-        "/images/live/live_10.png",
-        "/images/live/live_12.png",
         "/images/live/live_18.png",
         "/images/live/live_19.png",
         "/images/live/live_20.png",
@@ -896,28 +894,20 @@ export const projects: Projects = {
         title: "상호작용 및 피드백",
         items: [
           <p key="0">
-            <ul>
-              <li>
-                Comments : 카테고리별 특성을 고려한 댓글 시스템을 구현하여
-                효율적인 커뮤니케이션을 지원함
-              </li>
-              <li>
-                Goals : 프로젝트 목표 달성도에 대한 실시간 평가 및 피드백을
-                제공하여 목표 관리의 투명성을 높임
-              </li>
-              <li>
-                Task : 개별 태스크 진행 상황을 공유하고 이슈를 논의할 수 있는
-                기능을 제공함
-              </li>
-              <li>
-                Task Chart : 전체 진척도를 분석하여 프로젝트 방향성을 점검할 수
-                있도록 지원함
-              </li>
-              <li>
-                Member Evaluation : 팀원 간의 객관적 평가 시스템을 제공하여
-                협업의 질을 향상시킴
-              </li>
-            </ul>
+            Comments : 카테고리별 특성을 고려한 댓글 시스템을 구현하여 효율적인
+            커뮤니케이션을 지원함
+            <br />
+            Goals : 프로젝트 목표 달성도에 대한 실시간 평가 및 피드백을 제공하여
+            목표 관리의 투명성을 높임
+            <br />
+            Task : 개별 태스크 진행 상황을 공유하고 이슈를 논의할 수 있는 기능을
+            제공함
+            <br />
+            Task Chart : 전체 진척도를 분석하여 프로젝트 방향성을 점검할 수
+            있도록 지원함
+            <br />
+            Member Evaluation : 팀원 간의 객관적 평가 시스템을 제공하여 협업의
+            질을 향상시킴
           </p>,
         ],
       },
@@ -1458,17 +1448,17 @@ export const projects: Projects = {
       images: [
         "/images/pawwise/pawwise_1.png",
         "/images/pawwise/pawwise_2.png",
+        "/images/pawwise/pawwise_13.png",
         "/images/pawwise/pawwise_3.png",
         "/images/pawwise/pawwise_4.png",
         "/images/pawwise/pawwise_5.png",
-        "/images/pawwise/pawwise_6.png",
-        "/images/pawwise/pawwise_7.png",
+        "/images/pawwise/pawwise_14.png",
+        "/images/pawwise/pawwise_15.png",
         "/images/pawwise/pawwise_8.png",
         "/images/pawwise/pawwise_9.png",
         "/images/pawwise/pawwise_10.png",
         "/images/pawwise/pawwise_11.png",
         "/images/pawwise/pawwise_12.png",
-        "/images/pawwise/pawwise_13.png",
       ],
     },
     description: [
