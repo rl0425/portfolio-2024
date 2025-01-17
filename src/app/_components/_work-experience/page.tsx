@@ -2,7 +2,7 @@
  * 작업 경험 섹션 스타일 상수
  */
 const STYLES = {
-  CONTAINER: "flex flex-col gap-1",
+  CONTAINER: "flex flex-col gap-3",
   MAIN_TITLE: "text-[14px] md:text-[15px] font-semibold text-[#222222ba]",
   SUB_TITLE: "text-[14px] md:text-[16px] font-bold underline text-[#222222ba]",
   DETAIL_TITLE: "text-[12px] md:text-[13px] font-semibold text-[#22222275]",
@@ -19,7 +19,7 @@ const STYLES = {
   COMPANY_PERIOD: "text-[12px] font-normal text-[#777676] md:text-[14px]",
   COMPANY_DESC: "text-[14px] font-medium md:text-[15px]",
   CONTENT_CONTAINER:
-    "flex flex-col gap-4 text-[12px] font-normal leading-relaxed md:text-[14px]",
+    "flex flex-col gap-3 text-[12px] font-normal leading-relaxed md:text-[14px]",
   COMPANY_INFO_CONTAINER: "flex items-center gap-2",
   COMPANY_INFO_BOX: "bg-[#2222221c] p-4 rounded-lg",
   SECTION_MARGIN: "mt-6",
@@ -39,99 +39,16 @@ export default function WorkExperience() {
             <div className={STYLES.CONTENT_CONTAINER}>
               <div className={STYLES.COMPANY_INFO_BOX}>
                 <p className={STYLES.COMPANY_INFO_CONTAINER}>
-                  <span className={STYLES.COMPANY_NAME}>(주)헤븐트리</span>
+                  <span className={STYLES.COMPANY_NAME}>(주)클래스유</span>
                   <span className={STYLES.COMPANY_PERIOD}>
-                    2021년 7월 ~ 2022년 12월
+                    2023년 8월 ~ 2024년 11월
                   </span>
                 </p>
                 <p className={STYLES.COMPANY_DESC}>
-                  프로젝트 관리 솔루션부터 포트폴리오까지 통합 관리가 가능한
-                  클로바인(Clovine) 서비스 개발
+                  강의별 커뮤니티 서비스가 있는 커뮤니티형 온라인 강의 플랫폼을
+                  개발 및 지원하는 IT 솔루션 기업
                 </p>
-                <h3 className={STYLES.DETAIL_TITLE}>프론트엔드/백엔드 개발</h3>
-              </div>
-              <div className={STYLES.DIVIDER}></div>
-              <div>
-                <div className={STYLES.CONTAINER}>
-                  <h4 className={STYLES.SUB_TITLE}>
-                    통합형 프로젝트 관리 프로그램(PPM) 기능 개발
-                  </h4>
-                  <ul className="mb-2 list-none">
-                    <li className={STYLES.LIST_ITEM}>
-                      • DHTMLX Gantt 라이브러리 커스터마이징을 통한 자사
-                      PPM(프로젝트 포트폴리오 관리) 시스템에 최적화된 간트차트
-                      서비스 개발
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      • 프로젝트 생성, 작업 등록/관리, 팀원 할당, 진척도 추적 등
-                      PPM 핵심 기능 구현으로 웹페이지 방문자 수(PV) 200% 증가
-                      달성
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      • 트리 구조 기반 조직도 시스템, 사용자 권한 기반 접근 제어
-                      시스템 등 다양한 산업군에서 사용 가능한 관리기능 개발
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      • 엔터프라이즈 고객을 위한 트리 뷰 조직도, 워크스페이스
-                      간트차트, 사업 분야 리스트 등 맞춤형 기능 개발로 140개
-                      이상의 고객사 확보에 기여
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      RESTful API 설계 및 통신 최적화, 재사용 가능한 공통 함수
-                      개발 및 비즈니스 로직 모듈화
-                    </li>
-                  </ul>
-                  <h4 className={STYLES.SUB_TITLE}>
-                    개발 프로세스 최적화 및 문서화
-                  </h4>
-                  <ul className="list-none">
-                    <li className={STYLES.LIST_ITEM}>
-                      • 데이터베이스 테이블 정의서 및 함수 기능 명세서를
-                      작성하여 유지보수성향상 및 팀 내 지식 공유 촉진
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      • 프로젝트 관리를 위한 공통 함수와 UI 가이드라인을
-                      문서화하여 개발 표준을 수립
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      • Git Flow 전략 도입 및 코드 리뷰 프로세스 구축으로 배포
-                      안정성과 코드 품질 향상
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      MongoDB 인덱싱 및 데이터 캐싱 전략 도입으로 API 응답 속도
-                      200% 개선
-                    </li>
-                  </ul>
-                  <h4 className={STYLES.SUB_TITLE}>성과 및 기여</h4>
-                  <ul className="mb-2 list-none">
-                    <li className={STYLES.LIST_ITEM}>
-                      • 시드 단계에서 시리즈 A 100억 원 규모 투자 유치 과정의
-                      핵심 서비스 개발 주도
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      • 창업진흥원 산하 100여 개 기업 대상 엔터프라이즈 솔루션
-                      구축으로 140개 이상의 고객사 확보
-                    </li>
-                    <li className={STYLES.LIST_ITEM}>
-                      • 서비스 개선을 통한 전체 페이지뷰(PV) 200% 증가 달성
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className={STYLES.SECTION_MARGIN}>
-                <div className={STYLES.COMPANY_INFO_BOX}>
-                  <p className={STYLES.COMPANY_INFO_CONTAINER}>
-                    <span className={STYLES.COMPANY_NAME}>(주)클래스유</span>
-                    <span className={STYLES.COMPANY_PERIOD}>
-                      2023년 8월 ~ 2024년 11월
-                    </span>
-                  </p>
-                  <p className={STYLES.COMPANY_DESC}>
-                    강의별 커뮤니티 서비스가 있는 커뮤니티형 온라인 강의
-                    플랫폼을 개발 및 지원하는 IT 솔루션 기업
-                  </p>
-                  <h3 className={STYLES.DETAIL_TITLE}>프론트엔드 개발</h3>
-                </div>
+                <h3 className={STYLES.DETAIL_TITLE}>프론트엔드 개발</h3>
               </div>
               <div className={STYLES.DIVIDER}></div>
               <div className={STYLES.CONTAINER}>
@@ -228,17 +145,100 @@ export default function WorkExperience() {
               <div className={STYLES.SECTION_MARGIN}>
                 <div className={STYLES.COMPANY_INFO_BOX}>
                   <p className={STYLES.COMPANY_INFO_CONTAINER}>
-                    <span className={STYLES.COMPANY_NAME}>멘토링</span>
+                    <span className={STYLES.COMPANY_NAME}>(주)헤븐트리</span>
                     <span className={STYLES.COMPANY_PERIOD}>
-                      2024년 8월 ~ 2024년 9월
+                      2021년 7월 ~ 2022년 12월
                     </span>
                   </p>
                   <p className={STYLES.COMPANY_DESC}>
-                    [유데미 x 스나이퍼팩토리] Next.js 프로젝트 캠프 2기 리드
-                    멘토
+                    프로젝트 관리 솔루션부터 포트폴리오까지 통합 관리가 가능한
+                    클로바인(Clovine) 서비스 개발
                   </p>
-                  <h3 className={STYLES.DETAIL_TITLE}>프론트엔드 개발</h3>
+                  <h3 className={STYLES.DETAIL_TITLE}>
+                    프론트엔드/백엔드 개발
+                  </h3>
                 </div>
+              </div>
+              <div className={STYLES.DIVIDER}></div>
+              <div>
+                <div className={STYLES.CONTAINER}>
+                  <h4 className={STYLES.SUB_TITLE}>
+                    통합형 프로젝트 관리 프로그램(PPM) 기능 개발
+                  </h4>
+                  <ul className="mb-2 list-none">
+                    <li className={STYLES.LIST_ITEM}>
+                      • DHTMLX Gantt 라이브러리 커스터마이징을 통한 자사
+                      PPM(프로젝트 포트폴리오 관리) 시스템에 최적화된 간트차트
+                      서비스 개발
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      • 프로젝트 생성, 작업 등록/관리, 팀원 할당, 진척도 추적 등
+                      PPM 핵심 기능 구현으로 웹페이지 방문자 수(PV) 200% 증가
+                      달성
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      • 트리 구조 기반 조직도 시스템, 사용자 권한 기반 접근 제어
+                      시스템 등 다양한 산업군에서 사용 가능한 관리기능 개발
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      • 엔터프라이즈 고객을 위한 트리 뷰 조직도, 워크스페이스
+                      간트차트, 사업 분야 리스트 등 맞춤형 기능 개발로 140개
+                      이상의 고객사 확보에 기여
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      RESTful API 설계 및 통신 최적화, 재사용 가능한 공통 함수
+                      개발 및 비즈니스 로직 모듈화
+                    </li>
+                  </ul>
+                  <h4 className={STYLES.SUB_TITLE}>
+                    개발 프로세스 최적화 및 문서화
+                  </h4>
+                  <ul className="list-none">
+                    <li className={STYLES.LIST_ITEM}>
+                      • 데이터베이스 테이블 정의서 및 함수 기능 명세서를
+                      작성하여 유지보수성향상 및 팀 내 지식 공유 촉진
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      • 프로젝트 관리를 위한 공통 함수와 UI 가이드라인을
+                      문서화하여 개발 표준을 수립
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      • Git Flow 전략 도입 및 코드 리뷰 프로세스 구축으로 배포
+                      안정성과 코드 품질 향상
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      MongoDB 인덱싱 및 데이터 캐싱 전략 도입으로 API 응답 속도
+                      200% 개선
+                    </li>
+                  </ul>
+                  <h4 className={STYLES.SUB_TITLE}>성과 및 기여</h4>
+                  <ul className="mb-2 list-none">
+                    <li className={STYLES.LIST_ITEM}>
+                      • 시드 단계에서 시리즈 A 100억 원 규모 투자 유치 과정의
+                      핵심 서비스 개발 주도
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      • 창업진흥원 산하 100여 개 기업 대상 엔터프라이즈 솔루션
+                      구축으로 140개 이상의 고객사 확보
+                    </li>
+                    <li className={STYLES.LIST_ITEM}>
+                      • 서비스 개선을 통한 전체 페이지뷰(PV) 200% 증가 달성
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className={STYLES.COMPANY_INFO_BOX}>
+                <p className={STYLES.COMPANY_INFO_CONTAINER}>
+                  <span className={STYLES.COMPANY_NAME}>멘토링</span>
+                  <span className={STYLES.COMPANY_PERIOD}>
+                    2024년 8월 ~ 2024년 9월
+                  </span>
+                </p>
+                <p className={STYLES.COMPANY_DESC}>
+                  [유데미 x 스나이퍼팩토리] Next.js 프로젝트 캠프 2기 리드 멘토
+                </p>
+                <h3 className={STYLES.DETAIL_TITLE}>프론트엔드 개발</h3>
               </div>
               <div className={STYLES.DIVIDER}></div>
 
