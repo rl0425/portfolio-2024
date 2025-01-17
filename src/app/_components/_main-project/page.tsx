@@ -310,7 +310,7 @@ export default function SideProject() {
                   <div
                     className="group relative h-full w-full cursor-pointer"
                     onClick={() =>
-                      router.push(`/projects?projectName=${PROJECTS[1].url}`)
+                      router.push(`/projects?projectName=${PROJECTS[2].url}`)
                     }
                   >
                     <div className="relative h-full w-full">
@@ -344,7 +344,7 @@ export default function SideProject() {
               <div
                 className="group relative h-full w-full cursor-pointer"
                 onClick={() =>
-                  router.push(`/projects?projectName=${PROJECTS[0].url}`)
+                  router.push(`/projects?projectName=${PROJECTS[1].url}`)
                 }
               >
                 <div className="absolute inset-0">
