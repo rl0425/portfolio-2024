@@ -55,7 +55,7 @@ const SKILLS_DATA = {
   },
   tools: {
     title: "Development Tools",
-    skills: ["Git", "GitHub", "Zeplin", "Figma", "npm", "yarn", "pnpm"],
+    skills: ["Git", "GitHub", "Zeplin", "Figma", "npm", "yarn"],
   },
 } as const;
 
