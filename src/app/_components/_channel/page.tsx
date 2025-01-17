@@ -28,7 +28,7 @@ export default function Channel() {
                   https://github.com/rl0425
                 </a>
               </div>
-              <div className="flex items-center justify-between gap-3 text-[14px] leading-relaxed md:justify-normal">
+              {/* <div className="flex items-center justify-between gap-3 text-[14px] leading-relaxed md:justify-normal">
                 <p className="w-[140px] text-[14px] font-semibold md:text-[16px]">
                   RESUME.
                 </p>
@@ -39,7 +39,7 @@ export default function Channel() {
                 >
                   Download
                 </a>
-              </div>
+              </div> */}
             </div>
           </section>
         </main>
