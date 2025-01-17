@@ -1,0 +1,17 @@
+{
+  "headers": [
+    {
+      "source": "/resume.pdf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=박기찬_이력서.pdf"
+        }
+      ]
+    }
+  ]
+} 
