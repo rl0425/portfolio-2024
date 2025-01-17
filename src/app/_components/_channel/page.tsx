@@ -28,17 +28,18 @@ export default function Channel() {
                   https://github.com/rl0425
                 </a>
               </div>
-              {/* <div className="flex items-center justify-between gap-3 text-[14px] leading-relaxed md:justify-normal">
+              <div className="flex items-center justify-between gap-3 text-[14px] leading-relaxed md:justify-normal">
                 <p className="w-[140px] text-[14px] font-semibold md:text-[16px]">
                   RESUME.
                 </p>
                 <a
-                  href="http://portfolio-gichan.s3-website.ap-northeast-2.amazonaws.com/"
+                  href="/resume.pdf"
+                  download="박기찬_이력서.pdf"
                   className="font-normal text-[#222222ba] underline md:text-[16px]"
                 >
-                  이력서
+                  Download
                 </a>
-              </div> */}
+              </div>
             </div>
           </section>
         </main>
