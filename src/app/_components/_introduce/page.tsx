@@ -88,6 +88,26 @@ export default function Introduce() {
           </p>
         ),
       },
+
+      {
+        id: 5,
+        content: (
+          <p>
+            Next.js와 TypeScript를 활용한 프로젝트 구조 설계에 강점이 있으며 복잡한 비디오 스트림 처리와 간트차트와 같은 대규모 라이브러리를 커스텀하는 과정에서
+            창의적인 문제 해결 능력을 발휘했으며, 애자일 스크럼 방법론을 주도적으로 실행하여 2주 단위 스프린트와 일일 스탠드업 미팅 체계를 확립한 적이 있습니다.
+          </p>
+        ),
+      },
+
+      {
+        id: 6,
+        content: (
+          <p>
+            React Profiler, Lighthouse, Performance Panel을 통한 병목 지점 분석, 메모이제이션 기법과 코드 스플리팅으로 실제 앱 성능을 크게 개선한 경험이 있으며,
+            Recoil, Redux, Zustand와 React Query를 결합한 효율적인 상태 관리에도 전문성을 갖추고 있습니다.
+          </p>
+        ),
+      },
     ],
     [],
   );
